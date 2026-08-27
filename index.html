@@ -4,19 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CHP SOP Wiki - Less-Lethal Operations</title>
-    <!-- Liên kết file CSS -->
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-
-    <!-- BAR QUẢN TRỊ (CHỈNH SỬA TRỰC TIẾP) -->
-    <div class="admin-bar">
-        <span id="edit-status" style="color:white; font-size: 0.8rem; font-weight:600;">Chế độ: Đọc</span>
-        <button class="admin-btn" onclick="toggleEditMode()">✏️ Bật Sửa Trực Tiếp</button>
-        <button class="admin-btn" onclick="saveToLocal()">💾 Lưu Tạm</button>
-        <button class="admin-btn" onclick="exportHTML()">📥 Xuất File HTML Nộp GitHub</button>
-        <button class="admin-btn danger" onclick="resetDefault()">🔄 Khôi Phục</button>
-    </div>
 
     <div class="app-container">
 
@@ -25,8 +15,8 @@
             <div class="brand">
                 <div class="brand-badge">CHP</div>
                 <div class="brand-text">
-                    <h2 class="editable">CALIFORNIA HIGHWAY PATROL</h2>
-                    <p class="editable">SOP WIKI SYSTEM</p>
+                    <h2>CALIFORNIA HIGHWAY PATROL</h2>
+                    <p>SOP WIKI SYSTEM</p>
                 </div>
             </div>
 
@@ -59,9 +49,9 @@
 
             <!-- HERO SECTION -->
             <section class="hero">
-                <span class="hero-tag editable">HPM 70.6 USE OF FORCE MANUAL</span>
-                <h1 class="editable">Quy trình Vũ khí Ít gây Sát thương</h1>
-                <p class="editable">Tài liệu chuẩn hóa các quy định triển khai Thiết bị Súng điện (Taser), Đạn tác động lực (Beanbag) và Quy trình Y tế cứu chữa đối tượng của Cảnh sát Giao thông Bang California (CHP).</p>
+                <span class="hero-tag">HPM 70.6 USE OF FORCE MANUAL</span>
+                <h1>Quy trình Vũ khí Ít gây Sát thương</h1>
+                <p>Tài liệu chuẩn hóa các quy định triển khai Thiết bị Súng điện (Taser), Đạn tác động lực (Beanbag) và Quy trình Y tế cứu chữa đối tượng của Cảnh sát Giao thông Bang California (CHP).</p>
             </section>
 
             <!-- CONTENT AREA WITH SUB-TABS -->
@@ -82,61 +72,61 @@
 
                         <!-- TAB 1 -->
                         <div id="sub-policy" class="sub-tab-panel active">
-                            <h2 class="editable">01. Chính sách & Nguyên tắc Cốt lõi</h2>
-                            <p class="editable">Mọi hành vi áp dụng vũ khí ít gây sát thương phải dựa trên nguyên tắc <strong>"Tính hợp lý khách quan" (Objective Reasonableness)</strong> được quy định trong án lệ <em>Graham v. Connor</em>.</p>
+                            <h2>01. Chính sách & Nguyên tắc Cốt lõi</h2>
+                            <p>Mọi hành vi áp dụng vũ khí ít gây sát thương phải dựa trên nguyên tắc <strong>"Tính hợp lý khách quan" (Objective Reasonableness)</strong> được quy định trong án lệ <em>Graham v. Connor</em>.</p>
 
-                            <h3 class="editable">Điều kiện triển khai bắt buộc:</h3>
+                            <h3>Điều kiện triển khai bắt buộc:</h3>
                             <ul>
-                                <li class="editable">Đối tượng có hành vi chống đối có chủ đích (Active Resistance) hoặc đe dọa tấn công sĩ quan/người dân.</li>
-                                <li class="editable">Sĩ quan phải đưa ra cảnh báo bằng lời nói (Ví dụ: <em>"CHP! Đứng yên nếu không sẽ bắn Taser!"</em>) trước khi khai hỏa trừ khi tình huống quá cấp bách.</li>
+                                <li>Đối tượng có hành vi chống đối có chủ đích (Active Resistance) hoặc đe dọa tấn công sĩ quan/người dân.</li>
+                                <li>Sĩ quan phải đưa ra cảnh báo bằng lời nói (Ví dụ: <em>"CHP! Đứng yên nếu không sẽ bắn Taser!"</em>) trước khi khai hỏa trừ khi tình huống quá cấp bách.</li>
                             </ul>
 
-                            <div class="warning-box editable">
+                            <div class="warning-box">
                                 <strong>NGHIÊM CẤM:</strong> Tuyệt đối không sử dụng thiết bị ít gây sát thương đối với cá nhân chỉ chống đối thụ động (Passive Resistance) hoặc chống đối bằng lời nói.
                             </div>
                         </div>
 
                         <!-- TAB 2 -->
                         <div id="sub-taser" class="sub-tab-panel">
-                            <h2 class="editable">02. Thiết bị Control Điện tử (Taser/ECD)</h2>
-                            <p class="editable">Sử dụng công nghệ xung điện gây vô hiệu hóa cơ học (NMI) để khống chế đối tượng.</p>
+                            <h2>02. Thiết bị Control Điện tử (Taser/ECD)</h2>
+                            <p>Sử dụng công nghệ xung điện gây vô hiệu hóa cơ học (NMI) để khống chế đối tượng.</p>
 
-                            <h3 class="editable">Vùng Bắn Mục Tiêu (Target Areas):</h3>
+                            <h3>Vùng Bắn Mục Tiêu (Target Areas):</h3>
                             <ul>
-                                <li class="editable"><strong>Mặt sau (Ưu tiên số 1):</strong> Bắn vào lưng bên dưới đường cổ áo. Giảm rủi ro gây chấn thương mắt/mặt và cho hiệu quả cao nhất.</li>
-                                <li class="editable"><strong>Mặt trước:</strong> Vùng bụng dưới và bắp đùi. Tránh bắn trực tiếp vào ngực, tim, cổ và hạ bộ.</li>
+                                <li><strong>Mặt sau (Ưu tiên số 1):</strong> Bắn vào lưng bên dưới đường cổ áo. Giảm rủi ro gây chấn thương mắt/mặt và cho hiệu quả cao nhất.</li>
+                                <li><strong>Mặt trước:</strong> Vùng bụng dưới và bắp đùi. Tránh bắn trực tiếp vào ngực, tim, cổ và hạ bộ.</li>
                             </ul>
 
-                            <div class="info-box editable">
+                            <div class="info-box">
                                 <strong>Giới hạn Chu kỳ:</strong> Mỗi lần bấm cò kéo dài 5 giây. Không áp dụng quá 3 chu kỳ (15 giây) trên cùng một đối tượng để tránh nguy cơ ngừng tim.
                             </div>
                         </div>
 
                         <!-- TAB 3 -->
                         <div id="sub-impact" class="sub-tab-panel">
-                            <h2 class="editable">03. Đạn Tác động Lực (Beanbag Rounds)</h2>
-                            <p class="editable">Đạn túi đậu 12-Gauge được bắn từ súng Shotgun chuyên dụng có báng và ốp lót màu cam/xanh lá để tránh nhầm lẫn với đạn thật.</p>
+                            <h2>03. Đạn Tác động Lực (Beanbag Rounds)</h2>
+                            <p>Đạn túi đậu 12-Gauge được bắn từ súng Shotgun chuyên dụng có báng và ốp lót màu cam/xanh lá để tránh nhầm lẫn với đạn thật.</p>
 
-                            <h3 class="editable">Khoảng cách & Vùng tác động:</h3>
+                            <h3>Khoảng cách & Vùng tác động:</h3>
                             <ul>
-                                <li class="editable"><strong>Khoảng cách tối thiểu:</strong> 15 feet (khoảng 5 mét). Bắn ở cự cự gần hơn 5m có thể gây xuyên thấu tử vong.</li>
-                                <li class="editable"><strong>Vùng cho phép bắn:</strong> Vùng cơ lớn như mông, bắp đùi, hoặc cẳng chân.</li>
-                                <li class="editable"><strong>Vùng cấm bắn:</strong> Đầu, cổ, ngực, cột sống (Trừ khi tình huống cho phép dùng lực lượng sát thương).</li>
+                                <li><strong>Khoảng cách tối thiểu:</strong> 15 feet (khoảng 5 mét). Bắn ở cự cự gần hơn 5m có thể gây xuyên thấu tử vong.</li>
+                                <li><strong>Vùng cho phép bắn:</strong> Vùng cơ lớn như mông, bắp đùi, hoặc cẳng chân.</li>
+                                <li><strong>Vùng cấm bắn:</strong> Đầu, cổ, ngực, cột sống (Trừ khi tình huống cho phép dùng lực lượng sát thương).</li>
                             </ul>
                         </div>
 
                         <!-- TAB 4 -->
                         <div id="sub-medical" class="sub-tab-panel">
-                            <h2 class="editable">04. Quy trình Cấp cứu Y tế & Báo cáo Form 268</h2>
-                            <h3 class="editable">1. Hỗ trợ Y tế Bắt buộc</h3>
-                            <p class="editable">Mọi cá nhân bị trúng đạn Beanbag hoặc bị ghim đầu kim Taser đều phải được nhân viên y tế (Paramedics) kiểm tra tại hiện trường hoặc đưa tới bệnh viện.</p>
+                            <h2>04. Quy trình Cấp cứu Y tế & Báo cáo Form 268</h2>
+                            <h3>1. Hỗ trợ Y tế Bắt buộc</h3>
+                            <p>Mọi cá nhân bị trúng đạn Beanbag hoặc bị ghim đầu kim Taser đều phải được nhân viên y tế (Paramedics) kiểm tra tại hiện trường hoặc đưa tới bệnh viện.</p>
 
-                            <h3 class="editable">2. Báo cáo Sử dụng Vũ lực (CHP Form 268)</h3>
-                            <p class="editable">Sĩ quan phải hoàn thành báo cáo CHP 268 trước khi kết thúc ca làm việc, ghi rõ:</p>
+                            <h3>2. Báo cáo Sử dụng Vũ lực (CHP Form 268)</h3>
+                            <p>Sĩ quan phải hoàn thành báo cáo CHP 268 trước khi kết thúc ca làm việc, ghi rõ:</p>
                             <ul>
-                                <li class="editable">Số chu kỳ Taser hoặc số lượng đạn Beanbag đã bắn.</li>
-                                <li class="editable">Vị trí trúng đạn trên cơ thể đối tượng.</li>
-                                <li class="editable">Tên đơn vị Y tế đã tiếp nhận và sơ cứu đối tượng.</li>
+                                <li>Số chu kỳ Taser hoặc số lượng đạn Beanbag đã bắn.</li>
+                                <li>Vị trí trúng đạn trên cơ thể đối tượng.</li>
+                                <li>Tên đơn vị Y tế đã tiếp nhận và sơ cứu đối tượng.</li>
                             </ul>
                         </div>
 
@@ -151,14 +141,13 @@
                     <strong>CALIFORNIA HIGHWAY PATROL</strong> — OFFICIAL SOP WIKI
                 </div>
                 <div>
-                    Cập nhật lần cuối: <span id="last-update" class="editable">August 2026</span>
+                    Cập nhật lần cuối: <span id="last-update">August 2026</span>
                 </div>
             </footer>
 
         </main>
     </div>
 
-    <!-- Liên kết file JS -->
     <script src="./script.js"></script>
 </body>
 </html>

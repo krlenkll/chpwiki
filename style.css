@@ -9,7 +9,6 @@
     --text-muted: #64748b;
     --border-color: #e2e8f0;
     --danger-color: #ef4444;
-    --success-color: #10b981;
 }
 
 * {
@@ -25,52 +24,6 @@ body {
     line-height: 1.6;
     display: flex;
     min-height: 100vh;
-}
-
-/* CONTROL BAR FOR ADMIN */
-.admin-bar {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: var(--chp-navy);
-    border: 2px solid var(--chp-gold);
-    padding: 10px 16px;
-    border-radius: 30px;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    z-index: 9999;
-}
-
-.admin-btn {
-    background: var(--chp-gold);
-    color: var(--chp-navy);
-    border: none;
-    padding: 8px 14px;
-    border-radius: 20px;
-    font-weight: 700;
-    font-size: 0.85rem;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.admin-btn:hover {
-    background: var(--chp-gold-hover);
-    transform: translateY(-2px);
-}
-
-.admin-btn.danger {
-    background: var(--danger-color);
-    color: white;
-}
-
-/* EDITING HIGHLIGHT */
-[contenteditable="true"] {
-    outline: 2px dashed var(--chp-gold) !important;
-    background-color: rgba(212, 175, 55, 0.05);
-    padding: 2px 4px;
-    border-radius: 4px;
 }
 
 /* LAYOUT */
