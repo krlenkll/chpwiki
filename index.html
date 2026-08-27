@@ -3,133 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHP SOP Wiki - Less-Lethal Operations</title>
+    <title>CHP HandBook - Sổ Tay Vận Hành</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
     <div class="app-container">
 
-        <!-- SIDEBAR -->
+        <!-- SIDEBAR: 10 CHAPTERS -->
         <aside class="sidebar">
             <div class="brand">
                 <div class="brand-badge">CHP</div>
                 <div class="brand-text">
                     <h2>CALIFORNIA HIGHWAY PATROL</h2>
-                    <p>SOP WIKI SYSTEM</p>
+                    <p>SỔ TAY VẬN HÀNH (HANDBOOK)</p>
                 </div>
             </div>
 
             <nav class="navigation">
-                <div class="nav-group">
-                    <div class="nav-label">TỔNG QUAN</div>
-                    <a class="nav-item">Tổng quan Hệ thống</a>
-                </div>
-
-                <div class="nav-group">
-                    <div class="nav-label">QUY TRÌNH VẬN HÀNH</div>
-                    <a class="nav-item active">Ít gây Sát thương (Less-Lethal)</a>
-                    <a class="nav-item">Tuần tra & Giao thông</a>
-                    <a class="nav-item">Truy đuổi Xe (Pursuits)</a>
-                </div>
+                <div class="nav-label">DANH MỤC CHƯƠNG (HANDBOOK)</div>
+                <a class="nav-item active" onclick="switchMainChapter('ch1')">Chương 1: [Tên Chương 1]</a>
+                <a class="nav-item" onclick="switchMainChapter('ch2')">Chương 2: [Tên Chương 2]</a>
+                <a class="nav-item" onclick="switchMainChapter('ch3')">Chương 3: [Tên Chương 3]</a>
+                <a class="nav-item" onclick="switchMainChapter('ch4')">Chương 4: [Tên Chương 4]</a>
+                <a class="nav-item" onclick="switchMainChapter('ch5')">Chương 5: [Tên Chương 5]</a>
+                <a class="nav-item" onclick="switchMainChapter('ch6')">Chương 6: [Tên Chương 6]</a>
+                <a class="nav-item" onclick="switchMainChapter('ch7')">Chương 7: [Tên Chương 7]</a>
+                <a class="nav-item" onclick="switchMainChapter('ch8')">Chương 8: [Tên Chương 8]</a>
+                <a class="nav-item" onclick="switchMainChapter('ch9')">Chương 9: [Tên Chương 9]</a>
+                <a class="nav-item" onclick="switchMainChapter('ch10')">Chương 10: [Tên Chương 10]</a>
             </nav>
         </aside>
 
-        <!-- MAIN CONTENT -->
+        <!-- MAIN CONTENT AREA -->
         <main class="main-content">
 
             <header class="topbar">
                 <div class="breadcrumbs">
-                    <strong>CHP SOP</strong> / <span id="bc-title">Less-Lethal Operations</span>
+                    <strong>CHP HANDBOOK</strong> / <span id="bc-title">Chương 1</span>
                 </div>
-                <div style="font-size:0.8rem; font-weight:600; color:var(--chp-gold); background:var(--chp-navy); padding:4px 12px; border-radius:12px;">
-                    PHIÊN BẢN HPM 70.6
-                </div>
+                <div class="version-badge">HPM MANUAL 2026</div>
             </header>
 
             <!-- HERO SECTION -->
             <section class="hero">
-                <span class="hero-tag">HPM 70.6 USE OF FORCE MANUAL</span>
-                <h1>Quy trình Vũ khí Ít gây Sát thương</h1>
-                <p>Tài liệu chuẩn hóa các quy định triển khai Thiết bị Súng điện (Taser), Đạn tác động lực (Beanbag) và Quy trình Y tế cứu chữa đối tượng của Cảnh sát Giao thông Bang California (CHP).</p>
+                <span class="hero-tag" id="hero-tag">CHƯƠNG 01</span>
+                <h1 id="hero-title">Tiêu Đề Chương 1</h1>
+                <p id="hero-desc">Mô tả ngắn gọn về nội dung và mục đích vận hành của Chương 1 trong sổ tay CHP.</p>
             </section>
 
             <!-- CONTENT AREA WITH SUB-TABS -->
             <div class="content-area">
                 
-                <div class="sub-tab-container">
-                    
-                    <!-- SUB-TABS HEADER -->
-                    <div class="sub-tab-header">
-                        <button class="sub-tab-btn active" onclick="openSubTab(event, 'sub-policy')">01. Chính sách Sử dụng Vũ lực</button>
-                        <button class="sub-tab-btn" onclick="openSubTab(event, 'sub-taser')">02. Thiết bị Súng Điện (Taser)</button>
-                        <button class="sub-tab-btn" onclick="openSubTab(event, 'sub-impact')">03. Đạn Tác động Lực (Beanbag)</button>
-                        <button class="sub-tab-btn" onclick="openSubTab(event, 'sub-medical')">04. Quy trình Y tế & Báo cáo</button>
+                <!-- ==================== CHƯƠNG 1 ==================== -->
+                <div id="ch1" class="main-chapter-panel active">
+                    <div class="sub-tab-container">
+                        <div class="sub-tab-header">
+                            <button class="sub-tab-btn active" onclick="openSubTab(event, 'ch1-sub1')">1.1 [Tab nhỏ 1]</button>
+                            <button class="sub-tab-btn" onclick="openSubTab(event, 'ch1-sub2')">1.2 [Tab nhỏ 2]</button>
+                            <button class="sub-tab-btn" onclick="openSubTab(event, 'ch1-sub3')">1.3 [Tab nhỏ 3]</button>
+                        </div>
+                        <div class="sub-tab-body">
+                            <div id="ch1-sub1" class="sub-tab-panel active">
+                                <h2>1.1 Nội dung phần 1</h2>
+                                <p>Đang chờ bạn gửi tài liệu sổ tay để điền nội dung vào đây...</p>
+                            </div>
+                            <div id="ch1-sub2" class="sub-tab-panel">
+                                <h2>1.2 Nội dung phần 2</h2>
+                                <p>Nội dung mẫu của Tab nhỏ 2 thuộc Chương 1.</p>
+                            </div>
+                            <div id="ch1-sub3" class="sub-tab-panel">
+                                <h2>1.3 Nội dung phần 3</h2>
+                                <p>Nội dung mẫu của Tab nhỏ 3 thuộc Chương 1.</p>
+                            </div>
+                        </div>
                     </div>
+                </div>
 
-                    <!-- SUB-TABS BODY -->
-                    <div class="sub-tab-body">
-
-                        <!-- TAB 1 -->
-                        <div id="sub-policy" class="sub-tab-panel active">
-                            <h2>01. Chính sách & Nguyên tắc Cốt lõi</h2>
-                            <p>Mọi hành vi áp dụng vũ khí ít gây sát thương phải dựa trên nguyên tắc <strong>"Tính hợp lý khách quan" (Objective Reasonableness)</strong> được quy định trong án lệ <em>Graham v. Connor</em>.</p>
-
-                            <h3>Điều kiện triển khai bắt buộc:</h3>
-                            <ul>
-                                <li>Đối tượng có hành vi chống đối có chủ đích (Active Resistance) hoặc đe dọa tấn công sĩ quan/người dân.</li>
-                                <li>Sĩ quan phải đưa ra cảnh báo bằng lời nói (Ví dụ: <em>"CHP! Đứng yên nếu không sẽ bắn Taser!"</em>) trước khi khai hỏa trừ khi tình huống quá cấp bách.</li>
-                            </ul>
-
-                            <div class="warning-box">
-                                <strong>NGHIÊM CẤM:</strong> Tuyệt đối không sử dụng thiết bị ít gây sát thương đối với cá nhân chỉ chống đối thụ động (Passive Resistance) hoặc chống đối bằng lời nói.
+                <!-- ==================== CHƯƠNG 2 ==================== -->
+                <div id="ch2" class="main-chapter-panel">
+                    <div class="sub-tab-container">
+                        <div class="sub-tab-header">
+                            <button class="sub-tab-btn active" onclick="openSubTab(event, 'ch2-sub1')">2.1 [Tab nhỏ 1]</button>
+                            <button class="sub-tab-btn" onclick="openSubTab(event, 'ch2-sub2')">2.2 [Tab nhỏ 2]</button>
+                        </div>
+                        <div class="sub-tab-body">
+                            <div id="ch2-sub1" class="sub-tab-panel active">
+                                <h2>2.1 Nội dung phần 1</h2>
+                                <p>Đang chờ bạn gửi tài liệu sổ tay...</p>
+                            </div>
+                            <div id="ch2-sub2" class="sub-tab-panel">
+                                <h2>2.2 Nội dung phần 2</h2>
+                                <p>Nội dung mẫu của Chương 2.</p>
                             </div>
                         </div>
+                    </div>
+                </div>
 
-                        <!-- TAB 2 -->
-                        <div id="sub-taser" class="sub-tab-panel">
-                            <h2>02. Thiết bị Control Điện tử (Taser/ECD)</h2>
-                            <p>Sử dụng công nghệ xung điện gây vô hiệu hóa cơ học (NMI) để khống chế đối tượng.</p>
-
-                            <h3>Vùng Bắn Mục Tiêu (Target Areas):</h3>
-                            <ul>
-                                <li><strong>Mặt sau (Ưu tiên số 1):</strong> Bắn vào lưng bên dưới đường cổ áo. Giảm rủi ro gây chấn thương mắt/mặt và cho hiệu quả cao nhất.</li>
-                                <li><strong>Mặt trước:</strong> Vùng bụng dưới và bắp đùi. Tránh bắn trực tiếp vào ngực, tim, cổ và hạ bộ.</li>
-                            </ul>
-
-                            <div class="info-box">
-                                <strong>Giới hạn Chu kỳ:</strong> Mỗi lần bấm cò kéo dài 5 giây. Không áp dụng quá 3 chu kỳ (15 giây) trên cùng một đối tượng để tránh nguy cơ ngừng tim.
+                <!-- ==================== CHƯƠNG 3 ==================== -->
+                <div id="ch3" class="main-chapter-panel">
+                    <div class="sub-tab-container">
+                        <div class="sub-tab-header">
+                            <button class="sub-tab-btn active" onclick="openSubTab(event, 'ch3-sub1')">3.1 [Tab nhỏ 1]</button>
+                        </div>
+                        <div class="sub-tab-body">
+                            <div id="ch3-sub1" class="sub-tab-panel active">
+                                <h2>3.1 Nội dung Chương 3</h2>
+                                <p>Đang chờ bạn gửi tài liệu...</p>
                             </div>
                         </div>
+                    </div>
+                </div>
 
-                        <!-- TAB 3 -->
-                        <div id="sub-impact" class="sub-tab-panel">
-                            <h2>03. Đạn Tác động Lực (Beanbag Rounds)</h2>
-                            <p>Đạn túi đậu 12-Gauge được bắn từ súng Shotgun chuyên dụng có báng và ốp lót màu cam/xanh lá để tránh nhầm lẫn với đạn thật.</p>
-
-                            <h3>Khoảng cách & Vùng tác động:</h3>
-                            <ul>
-                                <li><strong>Khoảng cách tối thiểu:</strong> 15 feet (khoảng 5 mét). Bắn ở cự cự gần hơn 5m có thể gây xuyên thấu tử vong.</li>
-                                <li><strong>Vùng cho phép bắn:</strong> Vùng cơ lớn như mông, bắp đùi, hoặc cẳng chân.</li>
-                                <li><strong>Vùng cấm bắn:</strong> Đầu, cổ, ngực, cột sống (Trừ khi tình huống cho phép dùng lực lượng sát thương).</li>
-                            </ul>
+                <!-- ==================== CHƯƠNG 4 ==================== -->
+                <div id="ch4" class="main-chapter-panel">
+                    <div class="sub-tab-container">
+                        <div class="sub-tab-header">
+                            <button class="sub-tab-btn active" onclick="openSubTab(event, 'ch4-sub1')">4.1 [Tab nhỏ 1]</button>
                         </div>
-
-                        <!-- TAB 4 -->
-                        <div id="sub-medical" class="sub-tab-panel">
-                            <h2>04. Quy trình Cấp cứu Y tế & Báo cáo Form 268</h2>
-                            <h3>1. Hỗ trợ Y tế Bắt buộc</h3>
-                            <p>Mọi cá nhân bị trúng đạn Beanbag hoặc bị ghim đầu kim Taser đều phải được nhân viên y tế (Paramedics) kiểm tra tại hiện trường hoặc đưa tới bệnh viện.</p>
-
-                            <h3>2. Báo cáo Sử dụng Vũ lực (CHP Form 268)</h3>
-                            <p>Sĩ quan phải hoàn thành báo cáo CHP 268 trước khi kết thúc ca làm việc, ghi rõ:</p>
-                            <ul>
-                                <li>Số chu kỳ Taser hoặc số lượng đạn Beanbag đã bắn.</li>
-                                <li>Vị trí trúng đạn trên cơ thể đối tượng.</li>
-                                <li>Tên đơn vị Y tế đã tiếp nhận và sơ cứu đối tượng.</li>
-                            </ul>
+                        <div class="sub-tab-body">
+                            <div id="ch4-sub1" class="sub-tab-panel active">
+                                <h2>4.1 Nội dung Chương 4</h2>
+                                <p>Đang chờ bạn gửi tài liệu...</p>
+                            </div>
                         </div>
+                    </div>
+                </div>
 
+                <!-- ==================== CHƯƠNG 5 ==================== -->
+                <div id="ch5" class="main-chapter-panel">
+                    <div class="sub-tab-container">
+                        <div class="sub-tab-header">
+                            <button class="sub-tab-btn active" onclick="openSubTab(event, 'ch5-sub1')">5.1 [Tab nhỏ 1]</button>
+                        </div>
+                        <div class="sub-tab-body">
+                            <div id="ch5-sub1" class="sub-tab-panel active">
+                                <h2>5.1 Nội dung Chương 5</h2>
+                                <p>Đang chờ bạn gửi tài liệu...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==================== CHƯƠNG 6 ==================== -->
+                <div id="ch6" class="main-chapter-panel">
+                    <div class="sub-tab-container">
+                        <div class="sub-tab-header">
+                            <button class="sub-tab-btn active" onclick="openSubTab(event, 'ch6-sub1')">6.1 [Tab nhỏ 1]</button>
+                        </div>
+                        <div class="sub-tab-body">
+                            <div id="ch6-sub1" class="sub-tab-panel active">
+                                <h2>6.1 Nội dung Chương 6</h2>
+                                <p>Đang chờ bạn gửi tài liệu...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==================== CHƯƠNG 7 ==================== -->
+                <div id="ch7" class="main-chapter-panel">
+                    <div class="sub-tab-container">
+                        <div class="sub-tab-header">
+                            <button class="sub-tab-btn active" onclick="openSubTab(event, 'ch7-sub1')">7.1 [Tab nhỏ 1]</button>
+                        </div>
+                        <div class="sub-tab-body">
+                            <div id="ch7-sub1" class="sub-tab-panel active">
+                                <h2>7.1 Nội dung Chương 7</h2>
+                                <p>Đang chờ bạn gửi tài liệu...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==================== CHƯƠNG 8 ==================== -->
+                <div id="ch8" class="main-chapter-panel">
+                    <div class="sub-tab-container">
+                        <div class="sub-tab-header">
+                            <button class="sub-tab-btn active" onclick="openSubTab(event, 'ch8-sub1')">8.1 [Tab nhỏ 1]</button>
+                        </div>
+                        <div class="sub-tab-body">
+                            <div id="ch8-sub1" class="sub-tab-panel active">
+                                <h2>8.1 Nội dung Chương 8</h2>
+                                <p>Đang chờ bạn gửi tài liệu...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==================== CHƯƠNG 9 ==================== -->
+                <div id="ch9" class="main-chapter-panel">
+                    <div class="sub-tab-container">
+                        <div class="sub-tab-header">
+                            <button class="sub-tab-btn active" onclick="openSubTab(event, 'ch9-sub1')">9.1 [Tab nhỏ 1]</button>
+                        </div>
+                        <div class="sub-tab-body">
+                            <div id="ch9-sub1" class="sub-tab-panel active">
+                                <h2>9.1 Nội dung Chương 9</h2>
+                                <p>Đang chờ bạn gửi tài liệu...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ==================== CHƯƠNG 10 ==================== -->
+                <div id="ch10" class="main-chapter-panel">
+                    <div class="sub-tab-container">
+                        <div class="sub-tab-header">
+                            <button class="sub-tab-btn active" onclick="openSubTab(event, 'ch10-sub1')">10.1 [Tab nhỏ 1]</button>
+                        </div>
+                        <div class="sub-tab-body">
+                            <div id="ch10-sub1" class="sub-tab-panel active">
+                                <h2>10.1 Nội dung Chương 10</h2>
+                                <p>Đang chờ bạn gửi tài liệu...</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -138,10 +225,10 @@
             <!-- FOOTER -->
             <footer class="footer">
                 <div>
-                    <strong>CALIFORNIA HIGHWAY PATROL</strong> — OFFICIAL SOP WIKI
+                    <strong>CALIFORNIA HIGHWAY PATROL</strong> — OFFICIAL HANDBOOK WIKI
                 </div>
                 <div>
-                    Cập nhật lần cuối: <span id="last-update">August 2026</span>
+                    Cập nhật: August 2026
                 </div>
             </footer>
 
