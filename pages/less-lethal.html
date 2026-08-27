@@ -2,1056 +2,185 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>
-        Less-Lethal Operations | CHP SOP Wiki
-    </title>
-
-    <meta
-        name="description"
-        content="California Highway Patrol Less-Lethal Operations Standard Operating Procedure"
-    >
-
-    <link rel="stylesheet" href="../style.css">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHP SOP Wiki - Less-Lethal Operations</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <div class="app">
 
-    <!-- SIDEBAR -->
-
+    <!-- =========================
+         SIDEBAR (MAIN TABS)
+    ========================== -->
     <aside class="sidebar">
 
         <div class="sidebar-brand">
-
-            <div class="brand-mark">
-                CHP
+            <div class="brand-mark">CHP</div>
+            <div class="brand-info">
+                <div class="brand-name">California Highway Patrol</div>
+                <div class="brand-label">SOP WIKI</div>
             </div>
-
-            <div>
-
-                <div class="brand-name">
-                    California Highway Patrol
-                </div>
-
-                <div class="brand-label">
-                    SOP WIKI
-                </div>
-
-            </div>
-
         </div>
 
-
         <nav class="navigation">
-
             <div class="nav-section">
-
-                <div class="nav-label">
-                    DOCUMENTATION
-                </div>
-
-                <a
-                    href="../index.html"
-                    class="nav-link"
-                >
+                <div class="nav-label">MAIN NAVIGATION</div>
+                
+                <!-- Main Tab Buttons -->
+                <button class="nav-link main-tab-btn" onclick="switchMainTab('overview-tab', this)">
                     Overview
-                </a>
-
-                <a
-                    href="department.html"
-                    class="nav-link"
-                >
-                    Department
-                </a>
-
+                </button>
+                <button class="nav-link main-tab-btn active" onclick="switchMainTab('less-lethal-tab', this)">
+                    Less-Lethal Operations
+                </button>
             </div>
-
-
-            <div class="nav-section">
-
-                <div class="nav-label">
-                    OPERATIONS
-                </div>
-
-                <a
-                    href="patrol.html"
-                    class="nav-link"
-                >
-                    Patrol Operations
-                </a>
-
-                <a
-                    href="traffic.html"
-                    class="nav-link"
-                >
-                    Traffic Enforcement
-                </a>
-
-                <a
-                    href="pursuits.html"
-                    class="nav-link"
-                >
-                    Vehicle Pursuits
-                </a>
-
-            </div>
-
-
-            <div class="nav-section">
-
-                <div class="nav-label">
-                    USE OF FORCE
-                </div>
-
-                <a
-                    href="use-of-force.html"
-                    class="nav-link"
-                >
-                    General Policy
-                </a>
-
-                <a
-                    href="less-lethal.html"
-                    class="nav-link active"
-                >
-                    Less-Lethal
-                </a>
-
-            </div>
-
-
-            <div class="nav-section">
-
-                <div class="nav-label">
-                    TRAINING
-                </div>
-
-                <a
-                    href="training.html"
-                    class="nav-link"
-                >
-                    Training
-                </a>
-
-            </div>
-
         </nav>
 
-
         <div class="sidebar-footer">
-
-            <div class="version">
-                SOP VERSION 1.0
-            </div>
-
-            <div>
-                CHP SOP Wiki
-            </div>
-
+            <div class="version">VERSION 1.0</div>
+            <div>CHP SOP Wiki</div>
         </div>
 
     </aside>
 
-
-    <!-- MAIN -->
-
+    <!-- =========================
+         MAIN CONTENT AREA
+    ========================== -->
     <main class="main">
 
         <header class="topbar">
-
-            <button
-                class="mobile-menu"
-                onclick="toggleSidebar()"
-            >
-                ☰
-            </button>
-
-
+            <button class="mobile-menu" onclick="toggleSidebar()">☰</button>
             <div class="breadcrumbs">
-
-                <a href="../index.html">
-                    CHP SOP
-                </a>
-
+                <strong>CHP SOP</strong>
                 <span>/</span>
-
-                <span>
-                    Use of Force
-                </span>
-
-                <span>/</span>
-
-                <strong>
-                    Less-Lethal
-                </strong>
-
+                <span id="breadcrumb-current">Less-Lethal Operations</span>
             </div>
-
-
-            <div class="search-wrapper">
-
-                <span class="search-icon">
-                    /
-                </span>
-
-                <input
-                    id="search"
-                    type="search"
-                    placeholder="Search documentation..."
-                >
-
-            </div>
-
         </header>
 
+        <!-- =========================================================
+             TAB 1: OVERVIEW (MAIN TAB)
+        ========================================================== -->
+        <div id="overview-tab" class="main-tab-content" style="display: none;">
+            <section class="hero">
+                <div class="hero-eyebrow">CALIFORNIA HIGHWAY PATROL</div>
+                <h1>Standard Operating<br>Procedure Wiki</h1>
+                <p>Centralized documentation for departmental policies and field operations.</p>
+            </section>
+        </div>
 
-        <div class="documentation-layout">
+        <!-- =========================================================
+             TAB 2: LESS-LETHAL OPERATIONS (MAIN TAB WITH SUB-TABS)
+        ========================================================== -->
+        <div id="less-lethal-tab" class="main-tab-content">
 
+            <section class="hero">
+                <div class="hero-eyebrow">USE OF FORCE POLICY</div>
+                <h1>Less-Lethal Operations</h1>
+                <p>Standard Operating Procedures governing less-lethal equipment, deployment criteria, and tactical operations.</p>
+            </section>
 
-            <!-- DOCUMENT -->
+            <!-- SUB-TABS NAVIGATION -->
+            <div class="sub-tab-navigation">
+                <button class="sub-tab-btn active" onclick="switchSubTab('sub-general', this)">
+                    01. General Policy
+                </button>
+                <button class="sub-tab-btn" onclick="switchSubTab('sub-continuum', this)">
+                    02. Force Continuum
+                </button>
+                <button class="sub-tab-btn" onclick="switchSubTab('sub-ecd', this)">
+                    03. Electronic Control Device
+                </button>
+                <button class="sub-tab-btn" onclick="switchSubTab('sub-quickref', this)">
+                    04. Quick Reference
+                </button>
+            </div>
 
-            <article class="document">
-
-
-                <div class="document-header">
-
-                    <div class="eyebrow">
-                        FIELD OPERATIONS DIVISION
-                    </div>
-
-                    <h1>
-                        Less-Lethal Operations
-                    </h1>
-
-                    <p class="document-subtitle">
-                        Standard Operating Procedure
-                    </p>
-
-
-                    <div class="document-meta">
-
-                        <div>
-                            <span>
-                                DOCUMENT TYPE
-                            </span>
-
-                            <strong>
-                                Standard Operating Procedure
-                            </strong>
-                        </div>
-
-
-                        <div>
-                            <span>
-                                SECTION
-                            </span>
-
-                            <strong>
-                                Less-Lethal Operations
-                            </strong>
-                        </div>
-
-
-                        <div>
-                            <span>
-                                VERSION
-                            </span>
-
-                            <strong>
-                                1.0
-                            </strong>
-                        </div>
-
-
-                        <div>
-                            <span>
-                                STATUS
-                            </span>
-
-                            <strong class="status-active">
-                                ACTIVE
-                            </strong>
-                        </div>
-
-
-                        <div>
-                            <span>
-                                EFFECTIVE DATE
-                            </span>
-
-                            <strong>
-                                Immediately upon publication
-                            </strong>
-                        </div>
-
-                    </div>
-
+            <!-- SUB-TAB CONTENT 1 -->
+            <div id="sub-general" class="sub-tab-content active">
+                <div class="content-panel">
+                    <h2>01. General Policy</h2>
+                    <p>Standard protocols regarding authorization, proportionality, and de-escalation prior to employing less-lethal force options.</p>
                 </div>
+            </div>
 
-
-                <div class="policy-notice">
-
-                    <strong>
-                        Operational Policy
-                    </strong>
-
-                    <p>
-                        This document establishes departmental
-                        standards and procedures governing
-                        Less-Lethal Operations.
-                    </p>
-
+            <!-- SUB-TAB CONTENT 2 -->
+            <div id="sub-continuum" class="sub-tab-content" style="display: none;">
+                <div class="content-panel">
+                    <h2>02. Use of Force Continuum</h2>
+                    <p>Detailed matrix defining subject resistance levels and the corresponding authorized response thresholds.</p>
                 </div>
-
-
-                <!-- TABLE OF CONTENTS -->
-
-                <section class="toc">
-
-                    <h2>
-                        Contents
-                    </h2>
-
-                    <ol>
-
-                        <li>
-                            <a href="#chapter-1">
-                                General Policy
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#chapter-2">
-                                Definitions
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#chapter-3">
-                                Use of Force Continuum
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#chapter-4">
-                                Authorization and Certification
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#chapter-5">
-                                OC Spray / Aerosol Subject Restraint
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#chapter-6">
-                                Electronic Control Device
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#chapter-7">
-                                Impact Weapon / Baton
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#chapter-8">
-                                Kinetic Energy Projectiles
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#chapter-9">
-                                Chemical Agents
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#chapter-10">
-                                Special Considerations
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#chapter-11">
-                                Medical Response
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#chapter-12">
-                                Supervisor Responsibilities
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#chapter-13">
-                                Use of Force Report
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#chapter-14">
-                                Prohibited Use
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#chapter-15">
-                                Equipment Inspection
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#chapter-16">
-                                Training Requirements
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#chapter-17">
-                                Incident Review
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#chapter-18">
-                                Command Responsibility
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#chapter-19">
-                                Quick Reference
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#chapter-20">
-                                Final Standard
-                            </a>
-                        </li>
-
-                    </ol>
-
-                </section>
-
-
-                <!-- CHAPTER 1 -->
-
-                <section
-                    class="document-section"
-                    id="chapter-1"
-                >
-
-                    <div class="chapter-label">
-                        CHAPTER 01
-                    </div>
-
-                    <h2>
-                        General Policy
-                    </h2>
-
-
-                    <h3>
-                        1.1. Mục đích
-                    </h3>
-
-                    <p>
-                        Sổ tay này quy định tiêu chuẩn,
-                        nguyên tắc và quy trình sử dụng
-                        các phương tiện Less-Lethal trong
-                        quá trình thực hiện nhiệm vụ của
-                        California Highway Patrol.
-                    </p>
-
-                    <p>
-                        Less-Lethal được sử dụng nhằm hỗ trợ
-                        sĩ quan kiểm soát các tình huống
-                        nguy hiểm mà không cần ngay lập tức
-                        chuyển sang mức độ sử dụng vũ lực
-                        gây chết người, đồng thời bảo vệ
-                        tính mạng của sĩ quan, người dân
-                        và đối tượng.
-                    </p>
-
-
-                    <div class="warning-box">
-
-                        <strong>
-                            IMPORTANT
-                        </strong>
-
-                        <p>
-                            Less-Lethal không đồng nghĩa với
-                            Non-Lethal. Mọi phương tiện
-                            Less-Lethal đều có khả năng gây
-                            thương tích nghiêm trọng hoặc
-                            tử vong nếu sử dụng sai mục đích,
-                            sai hoàn cảnh hoặc không tuân thủ
-                            quy trình.
-                        </p>
-
-                    </div>
-
-
-                    <h3>
-                        1.2. Nguyên tắc chung
-                    </h3>
-
-                    <p>
-                        Mọi việc sử dụng vũ lực phải dựa trên
-                        tổng thể hoàn cảnh tại thời điểm
-                        sử dụng vũ lực.
-                    </p>
-
-                    <ul>
-
-                        <li>
-                            Tính hợp pháp.
-                        </li>
-
-                        <li>
-                            Tính cần thiết.
-                        </li>
-
-                        <li>
-                            Tính hợp lý khách quan.
-                        </li>
-
-                        <li>
-                            Mức độ nguy hiểm thực tế.
-                        </li>
-
-                        <li>
-                            Hành vi chống đối của đối tượng.
-                        </li>
-
-                        <li>
-                            Khả năng kiểm soát tình huống.
-                        </li>
-
-                        <li>
-                            Các biện pháp thay thế có thể
-                            thực hiện.
-                        </li>
-
-                    </ul>
-
-
-                    <h3>
-                        1.3. De-escalation
-                    </h3>
-
-                    <p>
-                        Khi điều kiện cho phép, sĩ quan phải
-                        ưu tiên các biện pháp giảm leo thang
-                        trước khi sử dụng vũ lực.
-                    </p>
-
-                    <ul>
-
-                        <li>
-                            Giao tiếp bằng lời nói.
-                        </li>
-
-                        <li>
-                            Đưa ra mệnh lệnh rõ ràng.
-                        </li>
-
-                        <li>
-                            Cho đối tượng thời gian tuân thủ.
-                        </li>
-
-                        <li>
-                            Duy trì khoảng cách an toàn.
-                        </li>
-
-                        <li>
-                            Sử dụng vật cản hoặc vị trí
-                            có lợi.
-                        </li>
-
-                        <li>
-                            Yêu cầu thêm đơn vị hỗ trợ.
-                        </li>
-
-                        <li>
-                            Điều chỉnh chiến thuật theo
-                            diễn biến tình huống.
-                        </li>
-
-                    </ul>
-
-                </section>
-
-
-                <!-- CHAPTER 2 -->
-
-                <section
-                    class="document-section"
-                    id="chapter-2"
-                >
-
-                    <div class="chapter-label">
-                        CHAPTER 02
-                    </div>
-
-                    <h2>
-                        Definitions
-                    </h2>
-
-
-                    <h3>
-                        2.1. Less-Lethal
-                    </h3>
-
-                    <p>
-                        Less-Lethal là nhóm phương tiện được
-                        thiết kế nhằm kiểm soát, vô hiệu hóa
-                        hoặc làm giảm khả năng tiếp tục chống
-                        đối của một đối tượng mà không chủ
-                        đích gây tử vong.
-                    </p>
-
-
-                    <h3>
-                        2.2. Force
-                    </h3>
-
-                    <p>
-                        Force là việc sĩ quan sử dụng biện
-                        pháp vật lý hoặc thiết bị nhằm kiểm
-                        soát hành vi, chuyển động hoặc khả
-                        năng chống đối của một cá nhân.
-                    </p>
-
-
-                    <h3>
-                        2.3. Intermediate Force
-                    </h3>
-
-                    <p>
-                        Intermediate Force là mức độ vũ lực
-                        cao hơn các biện pháp kiểm soát cơ bản
-                        nhưng chưa đến mức sử dụng deadly force.
-                    </p>
-
-
-                    <h3>
-                        2.4. Objectively Reasonable
-                    </h3>
-
-                    <p>
-                        Việc sử dụng vũ lực phải được đánh giá
-                        dựa trên những gì một sĩ quan hợp lý
-                        có thể nhận thức tại thời điểm xảy ra
-                        sự việc, thay vì chỉ dựa trên kết quả
-                        sau cùng.
-                    </p>
-
-
-                    <h3>
-                        2.5. Passive Resistance
-                    </h3>
-
-                    <p>
-                        Đối tượng không thực hiện hành vi
-                        tấn công hoặc chống trả tích cực nhưng
-                        không tuân thủ hoặc không hợp tác.
-                    </p>
-
-
-                    <h3>
-                        2.6. Active Resistance
-                    </h3>
-
-                    <p>
-                        Đối tượng chủ động chống lại quá trình
-                        kiểm soát hoặc bắt giữ bằng hành động
-                        thể chất.
-                    </p>
-
-
-                    <h3>
-                        2.7. Assaultive Behavior
-                    </h3>
-
-                    <p>
-                        Đối tượng thực hiện hành vi có khả năng
-                        gây thương tích cho sĩ quan hoặc người khác.
-                    </p>
-
-
-                    <h3>
-                        2.8. Serious Threat
-                    </h3>
-
-                    <p>
-                        Mối đe dọa có khả năng dẫn đến tử vong
-                        hoặc thương tích nghiêm trọng nếu không
-                        được kiểm soát.
-                    </p>
-
-                </section>
-
-
-                <!-- CHAPTER 3 -->
-
-                <section
-                    class="document-section"
-                    id="chapter-3"
-                >
-
-                    <div class="chapter-label">
-                        CHAPTER 03
-                    </div>
-
-                    <h2>
-                        Use of Force Continuum
-                    </h2>
-
-
-                    <p>
-                        Use of Force không phải là một chiếc
-                        thang bắt buộc mà sĩ quan phải sử dụng
-                        tuần tự từ thấp đến cao.
-                    </p>
-
-
-                    <div class="force-level">
-
-                        <span>
-                            LEVEL 01
-                        </span>
-
-                        <strong>
-                            Officer Presence
-                        </strong>
-
-                    </div>
-
-
-                    <div class="force-level">
-
-                        <span>
-                            LEVEL 02
-                        </span>
-
-                        <strong>
-                            Verbal Commands
-                        </strong>
-
-                    </div>
-
-
-                    <div class="force-level">
-
-                        <span>
-                            LEVEL 03
-                        </span>
-
-                        <strong>
-                            Soft Empty-Hand Control
-                        </strong>
-
-                    </div>
-
-
-                    <div class="force-level">
-
-                        <span>
-                            LEVEL 04
-                        </span>
-
-                        <strong>
-                            Less-Lethal
-                        </strong>
-
-                    </div>
-
-
-                    <div class="force-level">
-
-                        <span>
-                            LEVEL 05
-                        </span>
-
-                        <strong>
-                            Deadly Force
-                        </strong>
-
-                    </div>
-
-                </section>
-
-
-                <!-- QUICK REFERENCE -->
-
-                <section
-                    class="document-section"
-                    id="chapter-19"
-                >
-
-                    <div class="chapter-label">
-                        CHAPTER 19
-                    </div>
-
-                    <h2>
-                        Quick Reference
-                    </h2>
-
-
-                    <div class="quick-grid">
-
-                        <div class="quick-card">
-
-                            <h3>
-                                OC SPRAY
-                            </h3>
-
-                            <p>
-                                Active resistance /
-                                assaultive behavior.
-                            </p>
-
-                            <span>
-                                Control → Assess →
-                                Medical if needed → Report
-                            </span>
-
-                        </div>
-
-
-                        <div class="quick-card">
-
-                            <h3>
-                                TASER
-                            </h3>
-
-                            <p>
-                                Active resistance /
-                                assaultive behavior /
-                                nguy cơ thương tích.
-                            </p>
-
-                            <span>
-                                Control → Restrain →
-                                Medical → Supervisor → Report
-                            </span>
-
-                        </div>
-
-
-                        <div class="quick-card">
-
-                            <h3>
-                                BATON
-                            </h3>
-
-                            <p>
-                                Physical resistance /
-                                assaultive behavior.
-                            </p>
-
-                            <span>
-                                Control → Stop when threat ends →
-                                Medical → Report
-                            </span>
-
-                        </div>
-
-
-                        <div class="quick-card">
-
-                            <h3>
-                                KINETIC ENERGY
-                            </h3>
-
-                            <p>
-                                Serious threat requiring
-                                intermediate force.
-                            </p>
-
-                            <span>
-                                Secure → Medical →
-                                Supervisor → Report
-                            </span>
-
-                        </div>
-
-
-                        <div class="quick-card">
-
-                            <h3>
-                                CHEMICAL AGENT
-                            </h3>
-
-                            <p>
-                                Authorized special
-                                circumstances.
-                            </p>
-
-                            <span>
-                                Control → Medical →
-                                Documentation → Review
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </section>
-
-
-                <!-- FINAL STANDARD -->
-
-                <section
-                    class="document-section final-standard"
-                    id="chapter-20"
-                >
-
-                    <div class="chapter-label">
-                        CHAPTER 20
-                    </div>
-
-                    <h2>
-                        Final Standard
-                    </h2>
-
-                    <p>
-                        Less-Lethal equipment không phải là
-                        công cụ để thay thế judgment của
-                        sĩ quan.
-                    </p>
-
-
-                    <div class="final-quote">
-
-                        <strong>
-                            CONTROL THE THREAT
-                        </strong>
-
-                        <span>
-                            PROTECT LIFE
-                        </span>
-
-                        <span>
-                            PRESERVE SAFETY
-                        </span>
-
-                        <span>
-                            USE REASONABLE FORCE
-                        </span>
-
-                    </div>
-
-                </section>
-
-
-                <!-- APPROVAL -->
-
-                <section class="approval">
-
-                    <div>
-
-                        <span>
-                            APPROVED BY
-                        </span>
-
-                        <strong>
-                            Command Staff
-                        </strong>
-
-                    </div>
-
-
-                    <div>
-
-                        <span>
-                            DEPARTMENT
-                        </span>
-
-                        <strong>
-                            California Highway Patrol
-                        </strong>
-
-                    </div>
-
-
-                    <div>
-
-                        <span>
-                            DOCUMENT
-                        </span>
-
-                        <strong>
-                            Less-Lethal Operations SOP
-                        </strong>
-
-                    </div>
-
-                </section>
-
-
-            </article>
-
-
-            <!-- RIGHT SIDEBAR -->
-
-            <aside class="document-toc">
-
-                <div class="sticky-toc">
-
-                    <div class="toc-title">
-                        ON THIS PAGE
-                    </div>
-
-                    <a href="#chapter-1">
-                        General Policy
-                    </a>
-
-                    <a href="#chapter-2">
-                        Definitions
-                    </a>
-
-                    <a href="#chapter-3">
-                        Use of Force
-                    </a>
-
-                    <a href="#chapter-19">
-                        Quick Reference
-                    </a>
-
-                    <a href="#chapter-20">
-                        Final Standard
-                    </a>
-
+            </div>
+
+            <!-- SUB-TAB CONTENT 3 -->
+            <div id="sub-ecd" class="sub-tab-content" style="display: none;">
+                <div class="content-panel">
+                    <h2>03. Electronic Control Device (ECD)</h2>
+                    <p>Deployment guidelines, target zones, probe placement rules, and mandatory post-deployment medical procedures.</p>
                 </div>
+            </div>
 
-            </aside>
+            <!-- SUB-TAB CONTENT 4 -->
+            <div id="sub-quickref" class="sub-tab-content" style="display: none;">
+                <div class="content-panel">
+                    <h2>04. Quick Reference</h2>
+                    <p>Summary checklists, reporting requirements, and supervisor notification protocols for field supervisors.</p>
+                </div>
+            </div>
 
         </div>
+
+        <footer class="footer">
+            <div>
+                <strong>CALIFORNIA HIGHWAY PATROL</strong>
+                <span>SOP WIKI</span>
+            </div>
+            <div class="footer-right">
+                <span>Documentation Version 1.0</span>
+                <span>© 2026</span>
+            </div>
+        </footer>
 
     </main>
 
 </div>
 
+<!-- JavaScript cho chuyển đổi Tab -->
+<script>
+    // Chuyển đổi Tab Chính (Main Tabs)
+    function switchMainTab(tabId, element) {
+        document.querySelectorAll('.main-tab-content').forEach(tab => {
+            tab.style.display = 'none';
+        });
+        document.querySelectorAll('.main-tab-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
 
-<script src="../script.js"></script>
+        document.getElementById(tabId).style.display = 'block';
+        element.classList.add('active');
+
+        // Cập nhật Breadcrumb
+        document.getElementById('breadcrumb-current').innerText = element.innerText.trim();
+    }
+
+    // Chuyển đổi Tab Con (Sub Tabs)
+    function switchSubTab(subTabId, element) {
+        document.querySelectorAll('.sub-tab-content').forEach(content => {
+            content.style.display = 'none';
+            content.classList.remove('active');
+        });
+        document.querySelectorAll('.sub-tab-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        const activeSubContent = document.getElementById(subTabId);
+        activeSubContent.style.display = 'block';
+        activeSubContent.classList.add('active');
+        element.classList.add('active');
+    }
+</script>
 
 </body>
-
 </html>
