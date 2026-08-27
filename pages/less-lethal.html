@@ -43,7 +43,6 @@
             height: 100vh;
             position: sticky;
             top: 0;
-            overflow-y: auto;
         }
 
         .brand {
@@ -79,28 +78,14 @@
 
         .nav-item {
             display: block;
-            padding: 10px 12px;
-            color: #94a3b8;
+            padding: 12px 16px;
+            color: white;
             text-decoration: none;
             border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            margin-bottom: 4px;
-            transition: all 0.2s;
-            cursor: pointer;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .nav-item:hover, .nav-item.active {
-            background-color: var(--chp-navy-light);
-            color: white;
-        }
-
-        .nav-item.active {
-            border-left: 3px solid var(--chp-gold);
+            font-size: 0.9rem;
             font-weight: 700;
+            background-color: var(--chp-navy-light);
+            border-left: 4px solid var(--chp-gold);
         }
 
         /* MAIN CONTENT AREA */
@@ -156,9 +141,6 @@
 
         .content-area { padding: 32px; }
 
-        .main-chapter-panel { display: none; }
-        .main-chapter-panel.active { display: block; }
-
         /* SUB TABS STYLING */
         .sub-tab-container {
             background: white;
@@ -180,7 +162,7 @@
             border: none;
             background: transparent;
             font-weight: 600;
-            font-size: 0.88rem;
+            font-size: 0.85rem;
             color: var(--text-muted);
             cursor: pointer;
             border-bottom: 3px solid transparent;
@@ -252,28 +234,21 @@
 
     <div class="app-container">
 
-        <!-- SIDEBAR: 10 CHAPTERS -->
+        <!-- SIDEBAR: CHỈ 1 TAB DUY NHẤT -->
         <aside class="sidebar">
             <div class="brand">
                 <div class="brand-badge">CHP</div>
                 <div class="brand-text">
                     <h2>CALIFORNIA HIGHWAY PATROL</h2>
-                    <p>SỔ TAY LESS-LETHAL</p>
+                    <p>SỔ TAY QUY TRÌNH</p>
                 </div>
             </div>
 
             <nav class="navigation">
-                <div class="nav-label">DANH MỤC CHƯƠNG</div>
-                <a class="nav-item active" onclick="switchMainChapter('ch1')">Chương 1: Tổng quan & Triết lý</a>
-                <a class="nav-item" onclick="switchMainChapter('ch2')">Chương 2: Phân loại Trang bị</a>
-                <a class="nav-item" onclick="switchMainChapter('ch3')">Chương 3: Thang Sử dụng Vũ lực</a>
-                <a class="nav-item" onclick="switchMainChapter('ch4')">Chương 4: Vùng Bắn Hợp lệ & Cấm</a>
-                <a class="nav-item" onclick="switchMainChapter('ch5')">Chương 5: Quy trình & Callout</a>
-                <a class="nav-item" onclick="switchMainChapter('ch6')">Chương 6: Hạn chế & Trường hợp Cấm</a>
-                <a class="nav-item" onclick="switchMainChapter('ch7')">Chương 7: Kiểm soát Đám đông</a>
-                <a class="nav-item" onclick="switchMainChapter('ch8')">Chương 8: Sơ cứu & Y tế</a>
-                <a class="nav-item" onclick="switchMainChapter('ch9')">Chương 9: Báo cáo & Hồ sơ CAD/MDC</a>
-                <a class="nav-item" onclick="switchMainChapter('ch10')">Chương 10: Xử phạt Lạm dụng</a>
+                <div class="nav-label">DANH MỤC CHUYÊN ĐỀ</div>
+                <div class="nav-item">
+                    Ít gây Sát thương (Less-Lethal)
+                </div>
             </nav>
         </aside>
 
@@ -282,302 +257,189 @@
 
             <header class="topbar">
                 <div class="breadcrumbs">
-                    <strong>LESS-LETHAL HANDBOOK</strong> / <span id="bc-title">Chương 1</span>
+                    QUY TRÌNH VẬN HÀNH / <strong>Less-Lethal Operations</strong>
                 </div>
                 <div class="version-badge">HPM MANUAL 2026</div>
             </header>
 
             <!-- HERO SECTION -->
             <section class="hero">
-                <span class="hero-tag" id="hero-tag">CHƯƠNG 01</span>
-                <h1 id="hero-title">Chương 1: Tổng quan & Triết lý Sử dụng Vũ lực</h1>
-                <p id="hero-desc">Quy định về triết lý vận hành, tiêu chuẩn POST và Đạo luật AB 48 trong triển khai trang bị Less-Lethal.</p>
+                <span class="hero-tag">QUY TRÌNH SỬ DỤNG VŨ LỰC</span>
+                <h1>Ít gây Sát thương (Less-Lethal Operations)</h1>
+                <p>Tổng hợp toàn bộ 10 chương quy định về việc triển khai trang bị Taser, Beanbag, Pepperball, OC Spray và Baton theo tiêu chuẩn California Highway Patrol.</p>
             </section>
 
-            <!-- CONTENT AREA WITH SUB-TABS -->
+            <!-- CONTENT AREA WITH SUB TABS FOR 10 CHAPTERS -->
             <div class="content-area">
-                
-                <!-- CHAPTER 1 -->
-                <div id="ch1" class="main-chapter-panel active">
-                    <div class="sub-tab-container">
-                        <div class="sub-tab-header">
-                            <button class="sub-tab-btn active" onclick="openSubTab(event, 'ch1-sub1')">1.1 Mục đích Vận hành</button>
-                            <button class="sub-tab-btn" onclick="openSubTab(event, 'ch1-sub2')">1.2 Nguyên tắc Cốt lõi & De-escalation</button>
+                <div class="sub-tab-container">
+                    <div class="sub-tab-header">
+                        <button class="sub-tab-btn active" onclick="openSubTab(event, 'ch1')">Chương 1: Tổng quan</button>
+                        <button class="sub-tab-btn" onclick="openSubTab(event, 'ch2')">Chương 2: Phân loại Trang bị</button>
+                        <button class="sub-tab-btn" onclick="openSubTab(event, 'ch3')">Chương 3: Thang Vũ lực</button>
+                        <button class="sub-tab-btn" onclick="openSubTab(event, 'ch4')">Chương 4: Vùng Bắn</button>
+                        <button class="sub-tab-btn" onclick="openSubTab(event, 'ch5')">Chương 5: Callout & Radio</button>
+                        <button class="sub-tab-btn" onclick="openSubTab(event, 'ch6')">Chương 6: Trường hợp Cấm</button>
+                        <button class="sub-tab-btn" onclick="openSubTab(event, 'ch7')">Chương 7: Kiểm soát Bạo động</button>
+                        <button class="sub-tab-btn" onclick="openSubTab(event, 'ch8')">Chương 8: Sơ cứu & Y tế</button>
+                        <button class="sub-tab-btn" onclick="openSubTab(event, 'ch9')">Chương 9: Báo cáo CAD/MDC</button>
+                        <button class="sub-tab-btn" onclick="openSubTab(event, 'ch10')">Chương 10: Xử phạt</button>
+                    </div>
+
+                    <div class="sub-tab-body">
+                        <!-- CHAPTER 1 -->
+                        <div id="ch1" class="sub-tab-panel active">
+                            <h2>Chương 1: Tổng quan & Triết lý Sử dụng Vũ lực</h2>
+                            <h3>1.1 Mục đích Vận hành</h3>
+                            <p>Cung cấp giải pháp khống chế đối tượng mà không gây nguy hiểm đến tính mạng, tuân thủ tiêu chuẩn <strong>POST</strong> và <strong>Đạo luật AB 48</strong>.</p>
+                            
+                            <h3>1.2 Nguyên tắc Cốt lõi & De-escalation</h3>
+                            <p>Vũ khí Less-Lethal chỉ được sử dụng khi có sự <strong>hợp lý khách quan</strong> nhằm bảo vệ sĩ quan hoặc người dân khỏi hành vi bạo lực/chống đối.</p>
+                            <div class="info-box">
+                                <strong>Ưu tiên De-escalation:</strong> Sĩ quan luôn phải nỗ lực xoa dịu bằng lời nói (Verbal De-escalation) trước khi kích hoạt trang bị vũ lực.
+                            </div>
                         </div>
-                        <div class="sub-tab-body">
-                            <div id="ch1-sub1" class="sub-tab-panel active">
-                                <h2>1.1 Mục đích Vận hành</h2>
-                                <p>Cung cấp giải pháp khống chế đối tượng mà không gây nguy hiểm đến tính mạng, tuân thủ tiêu chuẩn <strong>POST</strong> và <strong>Đạo luật AB 48</strong>.</p>
+
+                        <!-- CHAPTER 2 -->
+                        <div id="ch2" class="sub-tab-panel">
+                            <h2>Chương 2: Phân loại Trang bị Less-Lethal</h2>
+                            <h3>2.1 Taser (X2 / X26P)</h3>
+                            <p>Sử dụng dòng điện gây co giật cơ (NMI). Cự ly hiệu quả: 2m – 7m. Giới hạn: Maximum 2 chu kỳ (5 giây/lần).</p>
+
+                            <h3>2.2 Beanbag Shotgun (Remington 870 Less-Lethal)</h3>
+                            <p>Súng bắn đạn bọc vải gây đau cục bộ. Cự ly hiệu quả: 5m – 20m.</p>
+                            <div class="warning-box">
+                                <strong>CẤM TUYỆT ĐỐI:</strong> Không bắn Beanbag ở cự ly dưới 3m.
                             </div>
-                            <div id="ch1-sub2" class="sub-tab-panel">
-                                <h2>1.2 Nguyên tắc Cốt lõi & De-escalation</h2>
-                                <h3>Nguyên tắc cốt lõi:</h3>
-                                <p>Vũ khí Less-Lethal chỉ được sử dụng khi có sự <strong>hợp lý khách quan</strong> nhằm bảo vệ sĩ quan hoặc người dân khỏi hành vi bạo lực/chống đối.</p>
-                                <div class="info-box">
-                                    <strong>Ưu tiên De-escalation:</strong> Sĩ quan luôn phải nỗ lực xoa dịu bằng lời nói (Verbal De-escalation) trước khi kích hoạt trang bị vũ lực, ngoại lệ khi tình huống diễn biến quá nhanh.
-                                </div>
+
+                            <h3>2.3 Pepperball / OC Spray & Baton</h3>
+                            <p>Bình xịt/súng hạt cay gây mù tạm thời (1m – 5m). Gậy cảnh sát (Baton) dùng để khống chế nhóm cơ lớn.</p>
+                        </div>
+
+                        <!-- CHAPTER 3 -->
+                        <div id="ch3" class="sub-tab-panel">
+                            <h2>Chương 3: Thang Sử dụng Vũ lực (Use of Force Continuum)</h2>
+                            <div class="table-responsive">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Cấp độ Mối đe dọa</th>
+                                            <th>Hành vi trong RP</th>
+                                            <th>Phản ứng Less-Lethal được phép</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Chống đối thụ động</strong></td>
+                                            <td>Đứng yên, từ chối di chuyển, cố thủ</td>
+                                            <td>Khống chế bằng tay (Soft Hands), cảnh báo bằng lời.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Chống đối chủ động</strong></td>
+                                            <td>Bỏ chạy, giằng co, cản trở thi hành công vụ</td>
+                                            <td>Bình xịt OC Spray hoặc Taser (khi bỏ chạy nguy hiểm).</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Tấn công phi bạo lực</strong></td>
+                                            <td>Vung tay chân, dùng gậy gộc/vật dụng tấn công</td>
+                                            <td>Taser, Beanbag Shotgun (vào chân), Baton vào nhóm cơ.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong style="color:var(--danger-color)">Mối đe dọa chết người</strong></td>
+                                            <td>Rút súng, cầm dao lao vào đâm</td>
+                                            <td><strong style="color:var(--danger-color)">Chuyển sang Lethal Force (Súng thật). Cấm dùng Less-Lethal.</strong></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
+                        </div>
+
+                        <!-- CHAPTER 4 -->
+                        <div id="ch4" class="sub-tab-panel">
+                            <h2>Chương 4: Vùng Bắn Hợp lệ & Vùng Cấm</h2>
+                            <ul>
+                                <li><strong style="color:var(--success-color)">Vùng Xanh (Hợp lệ):</strong> Đùi, bắp chân, mông, vùng hông trở xuống.</li>
+                                <li><strong style="color:#d97706">Vùng Vàng (Hạn chế):</strong> Cánh tay, bắp tay, vùng bụng dưới (khi đối tượng di chuyển).</li>
+                                <li><strong style="color:var(--danger-color)">Vùng Đỏ (Cấm tuyệt đối):</strong> Đầu, cổ, ngực/tim, cột sống, hạ bộ.</li>
+                            </ul>
+                            <div class="warning-box">
+                                <strong>Lưu ý RP:</strong> Nổ súng Less-Lethal vào Vùng Đỏ sẽ bị tính là vi phạm lạm dụng vũ lực.
+                            </div>
+                        </div>
+
+                        <!-- CHAPTER 5 -->
+                        <div id="ch5" class="sub-tab-panel">
+                            <h2>Chương 5: Quy trình & Callout VOIP / Radio</h2>
+                            <h3>5.1 Callout VOIP</h3>
+                            <p>Phải hô rõ ràng <strong>3 lần</strong> qua kênh VOIP trước khi bóp cò:</p>
+                            <ul>
+                                <li><strong>Taser:</strong> "Taser! Taser! Taser!"</li>
+                                <li><strong>Beanbag:</strong> "Beanbag! Beanbag! Beanbag!"</li>
+                                <li><strong>OC Spray:</strong> "Pepper! Pepper!"</li>
+                            </ul>
+
+                            <h3>5.2 Thông báo Radio</h3>
+                            <div class="info-box">
+                                <strong>Cú pháp mẫu:</strong> "1-Adam-12, Taser deployed at Legion Square, 1 subject down"
+                            </div>
+                        </div>
+
+                        <!-- CHAPTER 6 -->
+                        <div id="ch6" class="sub-tab-panel">
+                            <h2>Chương 6: Hạn chế & Các Trường hợp Cấm Bắn</h2>
+                            <ul>
+                                <li><strong>Phương tiện đang di chuyển:</strong> Cấm dùng Taser/Beanbag vào người đang lái ô tô, xe máy, xe đạp, trực thăng.</li>
+                                <li><strong>Vị trí nguy hiểm:</strong> Cấm bắn khi đối tượng đứng trên mái nhà, lan can cầu, giàn giáo.</li>
+                                <li><strong>Môi trường đặc biệt:</strong> Cấm bắn dưới nước sâu hoặc khu vực có nguy cơ cháy nổ, gas.</li>
+                                <li><strong>Tình trạng đặc biệt:</strong> Cấm dùng đối với phụ nữ mang thai, người già, hoặc trẻ em.</li>
+                            </ul>
+                        </div>
+
+                        <!-- CHAPTER 7 -->
+                        <div id="ch7" class="sub-tab-panel">
+                            <h2>Chương 7: Kiểm soát Đám đông & Bạo động</h2>
+                            <div class="warning-box">
+                                <strong>Không bắn giải tán:</strong> Tuyệt đối không bắn Beanbag hoặc Pepperball bừa bãi vào đám đông chỉ để giải tán.
+                            </div>
+                            <h3>Quy trình bạo động:</h3>
+                            <ol>
+                                <li>Phát loa cảnh báo 3 lần, chỉ rõ lối thoát an toàn.</li>
+                                <li>Cho thời gian rút lui hợp lý (tối thiểu 1-2 phút RP).</li>
+                                <li>Chỉ nhắm bắn vào cá nhân bạo loạn cụ thể (ném bom xăng, đập phá, tấn công cảnh sát).</li>
+                            </ol>
+                        </div>
+
+                        <!-- CHAPTER 8 -->
+                        <div id="ch8" class="sub-tab-panel">
+                            <h2>Chương 8: Quy trình Sơ cứu & Y tế Sau Giao tranh</h2>
+                            <ul>
+                                <li><strong>An ninh hiện trường:</strong> Đeo còng đối tượng xong phải kiểm tra sinh hiệu ngay.</li>
+                                <li><strong>Sơ cứu RP:</strong> Thực hiện RP tháo kim Taser hoặc sát trùng vết thương Beanbag.</li>
+                                <li><strong>Gọi EMS:</strong> Bắt buộc gọi EMS/Doctor nếu đối tượng bất tỉnh hoặc chấn thương nặng.</li>
+                            </ul>
+                        </div>
+
+                        <!-- CHAPTER 9 -->
+                        <div id="ch9" class="sub-tab-panel">
+                            <h2>Chương 9: Quy trình Báo cáo & Hồ sơ CAD/MDC</h2>
+                            <p>Mọi trường hợp kích hoạt vũ khí Less-Lethal đều phải lập hồ sơ <strong>Use of Force Report</strong> trên CAD/MDC trong vòng 24h.</p>
+                            <ul>
+                                <li>Mã định danh sĩ quan & Thời gian/Địa điểm.</li>
+                                <li>Lý do kích hoạt (Cấp độ chống đối).</li>
+                                <li>Loại vũ khí & số lượng đạn/chu kỳ điện.</li>
+                                <li>Lưu lại clip Bodycam (BWC) làm bằng chứng.</li>
+                            </ul>
+                        </div>
+
+                        <!-- CHAPTER 10 -->
+                        <div id="ch10" class="sub-tab-panel">
+                            <h2>Chương 10: Quy định Xử phạt Lạm dụng Vũ lực</h2>
+                            <ul>
+                                <li><strong>Vi phạm nhẹ</strong> <em>(Bắn sai vùng, thiếu callout)</em>: Nhắc nhở, đình chỉ công tác 24h-72h, học lại SOP.</li>
+                                <li><strong>Vi phạm nặng</strong> <em>(Bắn đuổi xe, gây thương tích nghiêm trọng)</em>: Tước phù hiệu, sa thải (Fired), truy tố Tòa án IC.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-
-                <!-- CHAPTER 2 -->
-                <div id="ch2" class="main-chapter-panel">
-                    <div class="sub-tab-container">
-                        <div class="sub-tab-header">
-                            <button class="sub-tab-btn active" onclick="openSubTab(event, 'ch2-sub1')">2.1 Taser (X2 / X26P)</button>
-                            <button class="sub-tab-btn" onclick="openSubTab(event, 'ch2-sub2')">2.2 Beanbag Shotgun</button>
-                            <button class="sub-tab-btn" onclick="openSubTab(event, 'ch2-sub3')">2.3 Pepperball & Baton</button>
-                        </div>
-                        <div class="sub-tab-body">
-                            <div id="ch2-sub1" class="sub-tab-panel active">
-                                <h2>2.1 Taser (X2 / X26P)</h2>
-                                <p>Sử dụng dòng điện gây co giật cơ (NMI).</p>
-                                <ul>
-                                    <li><strong>Cự ly hiệu quả:</strong> 2m – 7m.</li>
-                                    <li><strong>Giới hạn áp dụng:</strong> Maximum 2 chu kỳ (5 giây/lần).</li>
-                                </ul>
-                            </div>
-                            <div id="ch2-sub2" class="sub-tab-panel">
-                                <h2>2.2 Beanbag Shotgun (Remington 870 Less-Lethal)</h2>
-                                <p>Súng bắn đạn bọc vải gây đau cục bộ.</p>
-                                <ul>
-                                    <li><strong>Cự ly hiệu quả:</strong> 5m – 20m.</li>
-                                </ul>
-                                <div class="warning-box">
-                                    <strong>CẤM TUYỆT ĐỐI:</strong> Không bắn Beanbag ở cự ly dưới 3m.
-                                </div>
-                            </div>
-                            <div id="ch2-sub3" class="sub-tab-panel">
-                                <h2>2.3 Pepperball / OC Spray & Baton</h2>
-                                <h3>Pepperball / OC Spray:</h3>
-                                <p>Bình xịt hoặc súng bắn hạt cay gây mù tạm thời và kích ứng hô hấp. Cự ly: 1m – 5m.</p>
-                                <h3>Gậy Cảnh sát (ASP / Baton):</h3>
-                                <p>Vũ khí cận chiến dùng để khống chế hoặc vô hiệu hóa các nhóm cơ lớn.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CHAPTER 3 -->
-                <div id="ch3" class="main-chapter-panel">
-                    <div class="sub-tab-container">
-                        <div class="sub-tab-header">
-                            <button class="sub-tab-btn active" onclick="openSubTab(event, 'ch3-sub1')">3.1 Bảng Thang Vũ lực</button>
-                        </div>
-                        <div class="sub-tab-body">
-                            <div id="ch3-sub1" class="sub-tab-panel active">
-                                <h2>3.1 Thang Sử dụng Vũ lực (Use of Force Continuum)</h2>
-                                <div class="table-responsive">
-                                    <table>
-                                        <thead>
-                                            <tr>
-                                                <th>Cấp độ Mối đe dọa</th>
-                                                <th>Hành vi trong RP</th>
-                                                <th>Phản ứng Less-Lethal được phép</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td><strong>Chống đối thụ động</strong></td>
-                                                <td>Đứng yên, từ chối di chuyển, cố thủ</td>
-                                                <td>Khống chế bằng tay (Soft Hands), cảnh báo bằng lời.</td>
-                                            </tr>
-                                            <tr>
-                                                <td><strong>Chống đối chủ động</strong></td>
-                                                <td>Bỏ chạy, giằng co, cản trở thi hành công vụ</td>
-                                                <td>Bình xịt OC Spray hoặc Taser (khi bỏ chạy nguy hiểm).</td>
-                                            </tr>
-                                            <tr>
-                                                <td><strong>Tấn công phi bạo lực</strong></td>
-                                                <td>Vung tay chân, dùng gậy gộc/vật dụng tấn công</td>
-                                                <td>Taser, Beanbag Shotgun (vào chân), Baton vào nhóm cơ.</td>
-                                            </tr>
-                                            <tr>
-                                                <td><strong style="color:var(--danger-color)">Mối đe dọa chết người</strong></td>
-                                                <td>Rút súng, cầm dao lao vào đâm</td>
-                                                <td><strong style="color:var(--danger-color)">Chuyển sang Lethal Force (Súng thật). Cấm dùng Less-Lethal.</strong></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CHAPTER 4 -->
-                <div id="ch4" class="main-chapter-panel">
-                    <div class="sub-tab-container">
-                        <div class="sub-tab-header">
-                            <button class="sub-tab-btn active" onclick="openSubTab(event, 'ch4-sub1')">4.1 Phân vùng Mục tiêu</button>
-                            <button class="sub-tab-btn" onclick="openSubTab(event, 'ch4-sub2')">4.2 Quy định Roleplay</button>
-                        </div>
-                        <div class="sub-tab-body">
-                            <div id="ch4-sub1" class="sub-tab-panel active">
-                                <h2>4.1 Vùng Bắn Hợp lệ & Vùng Cấm</h2>
-                                <ul>
-                                    <li><strong style="color:var(--success-color)">Vùng Xanh (Hợp lệ):</strong> Đùi, bắp chân, mông, vùng hông trở xuống. Đây là các vị trí ưu tiên để tối đa hóa hiệu quả khống chế và giảm thiểu rủi ro.</li>
-                                    <li><strong style="color:#d97706">Vùng Vàng (Hạn chế):</strong> Cánh tay, bắp tay, vùng bụng dưới (chỉ áp dụng khi đối tượng đang di chuyển liên tục).</li>
-                                    <li><strong style="color:var(--danger-color)">Vùng Đỏ (Cấm tuyệt đối):</strong> Đầu, cổ, ngực/tim, cột sống, hạ bộ.</li>
-                                </ul>
-                            </div>
-                            <div id="ch4-sub2" class="sub-tab-panel">
-                                <h2>4.2 Nguyên tắc Roleplay (RP)</h2>
-                                <div class="warning-box">
-                                    <strong>Lưu ý RP:</strong> Nổ súng Less-Lethal vào Vùng Đỏ sẽ bị tính là vi phạm lạm dụng vũ lực (trừ trường hợp tình huống đã chuyển sang Lethal Force).
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CHAPTER 5 -->
-                <div id="ch5" class="main-chapter-panel">
-                    <div class="sub-tab-container">
-                        <div class="sub-tab-header">
-                            <button class="sub-tab-btn active" onclick="openSubTab(event, 'ch5-sub1')">5.1 Callout VOIP</button>
-                            <button class="sub-tab-btn" onclick="openSubTab(event, 'ch5-sub2')">5.2 Thông báo Radio</button>
-                        </div>
-                        <div class="sub-tab-body">
-                            <div id="ch5-sub1" class="sub-tab-panel active">
-                                <h2>5.1 Quy tắc Hô báo VOIP</h2>
-                                <p>Phải hô rõ ràng <strong>3 lần</strong> qua kênh VOIP trước khi bóp cò để các sĩ quan xung quanh và đối tượng ghi nhận RP:</p>
-                                <ul>
-                                    <li><strong>Taser:</strong> "Taser! Taser! Taser!"</li>
-                                    <li><strong>Beanbag:</strong> "Beanbag! Beanbag! Beanbag!"</li>
-                                    <li><strong>OC Spray:</strong> "Pepper! Pepper!"</li>
-                                </ul>
-                            </div>
-                            <div id="ch5-sub2" class="sub-tab-panel">
-                                <h2>5.2 Thông báo Radio</h2>
-                                <p>Báo vị trí và trạng thái đối tượng bị trúng đạn lên kênh Radio Đội.</p>
-                                <div class="info-box">
-                                    <strong>Ví dụ:</strong> "1-Adam-12, Taser deployed at Legion Square, 1 subject down"
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CHAPTER 6 -->
-                <div id="ch6" class="main-chapter-panel">
-                    <div class="sub-tab-container">
-                        <div class="sub-tab-header">
-                            <button class="sub-tab-btn active" onclick="openSubTab(event, 'ch6-sub1')">6.1 Trường hợp Cấm Bắn</button>
-                        </div>
-                        <div class="sub-tab-body">
-                            <div id="ch6-sub1" class="sub-tab-panel active">
-                                <h2>6.1 Hạn chế & Các Trường hợp Cấm Bắn</h2>
-                                <ul>
-                                    <li><strong>Phương tiện đang di chuyển:</strong> Cấm dùng Taser/Beanbag vào người đang lái ô tô, xe máy, xe đạp, trực thăng.</li>
-                                    <li><strong>Vị trí nguy hiểm:</strong> Cấm bắn khi đối tượng đang đứng trên mái nhà, lan can cầu, giàn giáo (nguy cơ ngã tử vong).</li>
-                                    <li><strong>Môi trường đặc biệt:</strong> Cấm bắn dưới nước sâu hoặc nơi có nguy cơ cháy nổ, khí gas (nguy cơ giật điện/bắt lửa).</li>
-                                    <li><strong>Tình trạng đặc biệt:</strong> Cấm sử dụng đối với phụ nữ mang thai, người già, hoặc trẻ em (trừ trường hợp cực kỳ đe dọa).</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CHAPTER 7 -->
-                <div id="ch7" class="main-chapter-panel">
-                    <div class="sub-tab-container">
-                        <div class="sub-tab-header">
-                            <button class="sub-tab-btn active" onclick="openSubTab(event, 'ch7-sub1')">7.1 Cấm Bắn Giải Tán</button>
-                            <button class="sub-tab-btn" onclick="openSubTab(event, 'ch7-sub2')">7.2 Quy trình Bạo động</button>
-                        </div>
-                        <div class="sub-tab-body">
-                            <div id="ch7-sub1" class="sub-tab-panel active">
-                                <h2>7.1 Kiểm soát Đám đông (Crowd Control)</h2>
-                                <div class="warning-box">
-                                    <strong>Không bắn giải tán:</strong> Tuyệt đối không bắn đạn Beanbag hoặc Pepperball bừa bãi vào đám đông đông người chỉ để giải tán.
-                                </div>
-                            </div>
-                            <div id="ch7-sub2" class="sub-tab-panel">
-                                <h2>7.2 Quy trình Giải tán Bạo động</h2>
-                                <ol>
-                                    <li>Phát loa cảnh báo 3 lần, chỉ rõ lối thoát an toàn cho đám đông.</li>
-                                    <li>Cho thời gian rút lui hợp lý (tối thiểu 1-2 phút RP).</li>
-                                    <li>Chỉ nhắm bắn vào các cá nhân bạo loạn cụ thể (đang ném bom xăng, đập phá, tấn công cảnh sát).</li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CHAPTER 8 -->
-                <div id="ch8" class="main-chapter-panel">
-                    <div class="sub-tab-container">
-                        <div class="sub-tab-header">
-                            <button class="sub-tab-btn active" onclick="openSubTab(event, 'ch8-sub1')">8.1 Thao tác Tại hiện trường</button>
-                            <button class="sub-tab-btn" onclick="openSubTab(event, 'ch8-sub2')">8.2 Yêu cầu Call EMS</button>
-                        </div>
-                        <div class="sub-tab-body">
-                            <div id="ch8-sub1" class="sub-tab-panel active">
-                                <h2>8.1 Sơ cứu Tại hiện trường</h2>
-                                <ul>
-                                    <li><strong>An ninh hiện trường:</strong> Ngay khi đối tượng bị khống chế và đeo còng, sĩ quan phải kiểm tra tình trạng sinh hiệu.</li>
-                                    <li><strong>Tháo kim Taser / Băng bó:</strong> Thực hiện RP tháo kim Taser hoặc sát trùng vết thương do Beanbag/Baton.</li>
-                                </ul>
-                            </div>
-                            <div id="ch8-sub2" class="sub-tab-panel">
-                                <h2>8.2 Gọi EMS (Medical Callout)</h2>
-                                <p>Bắt buộc gọi EMS/Doctor đến hiện trường hoặc đưa đối tượng về Pillbox Hospital nếu:</p>
-                                <ul>
-                                    <li>Đối tượng rơi vào trạng thái bất tỉnh.</li>
-                                    <li>Đối tượng bị thương nặng hoặc trúng đạn Beanbag ở cự ly gần.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CHAPTER 9 -->
-                <div id="ch9" class="main-chapter-panel">
-                    <div class="sub-tab-container">
-                        <div class="sub-tab-header">
-                            <button class="sub-tab-btn active" onclick="openSubTab(event, 'ch9-sub1')">9.1 Báo cáo CAD/MDC</button>
-                            <button class="sub-tab-btn" onclick="openSubTab(event, 'ch9-sub2')">9.2 Lưu Trích xuất Bodycam</button>
-                        </div>
-                        <div class="sub-tab-body">
-                            <div id="ch9-sub1" class="sub-tab-panel active">
-                                <h2>9.1 Quy trình Báo cáo Bắt buộc</h2>
-                                <p>Mọi trường hợp rút và kích hoạt vũ khí Less-Lethal đều phải lập hồ sơ <strong>Use of Force Report</strong> trên hệ thống CAD/MDC trong vòng 24h.</p>
-                                <h3>Nội dung báo cáo:</h3>
-                                <ul>
-                                    <li>Mã định danh sĩ quan & Thời gian/Địa điểm.</li>
-                                    <li>Lý do kích hoạt (Cấp độ chống đối của đối tượng).</li>
-                                    <li>Loại vũ khí sử dụng, số lượng đạn/chu kỳ điện.</li>
-                                    <li>Tình trạng y tế của đối tượng sau sự cố.</li>
-                                </ul>
-                            </div>
-                            <div id="ch9-sub2" class="sub-tab-panel">
-                                <h2>9.2 Trích xuất Bodycam (BWC)</h2>
-                                <p>Lưu lại đoạn clip RP làm bằng chứng nếu có khiếu nại từ Tòa án hoặc Thanh tra Nội bộ (IA).</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CHAPTER 10 -->
-                <div id="ch10" class="main-chapter-panel">
-                    <div class="sub-tab-container">
-                        <div class="sub-tab-header">
-                            <button class="sub-tab-btn active" onclick="openSubTab(event, 'ch10-sub1')">10.1 Khung Xử phạt IC</button>
-                        </div>
-                        <div class="sub-tab-body">
-                            <div id="ch10-sub1" class="sub-tab-panel active">
-                                <h2>10.1 Quy định Xử phạt Lạm dụng Vũ lực (IC)</h2>
-                                <ul>
-                                    <li><strong>Vi phạm nhẹ</strong> <em>(Bắn sai vùng, thiếu callout)</em>: Nhắc nhở, đình chỉ công tác tạm thời (Suspension 24h-72h), học lại SOP.</li>
-                                    <li><strong>Vi phạm nặng</strong> <em>(Bắn đuổi xe, gây thương tích nghiêm trọng)</em>: Tước phù hiệu, sa thải (Fired), chuyển hồ sơ sang Tòa án xét xử hình sự.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
 
             <!-- FOOTER -->
@@ -594,44 +456,9 @@
     </div>
 
     <script>
-        const chapterInfo = {
-            ch1: { title: "Chương 1: Tổng quan & Triết lý Sử dụng Vũ lực", desc: "Quy định về triết lý vận hành, tiêu chuẩn POST và Đạo luật AB 48." },
-            ch2: { title: "Chương 2: Phân loại Trang bị Less-Lethal", desc: "Thông số, cự ly và giới hạn của Taser, Beanbag, OC Spray & Baton." },
-            ch3: { title: "Chương 3: Thang Sử dụng Vũ lực", desc: "Bảng đối chiếu mối đe dọa và mức độ phản ứng Less-Lethal." },
-            ch4: { title: "Chương 4: Vùng Bắn Hợp lệ & Vùng Cấm", desc: "Quy định về Vùng Xanh, Vùng Vàng và Vùng Đỏ nghiêm cấm." },
-            ch5: { title: "Chương 5: Quy trình & Callout VOIP / Radio", desc: "Quy tắc hô báo VOIP 3 lần và cú pháp thông báo kênh Radio." },
-            ch6: { title: "Chương 6: Hạn chế & Các Trường hợp Cấm Bắn", desc: "Các môi trường, đối tượng và vị trí cấm triển khai trang bị." },
-            ch7: { title: "Chương 7: Kiểm soát Đám đông & Bạo động", desc: "Quy trình giải tán bạo động và quy định cấm bắn bừa bãi." },
-            ch8: { title: "Chương 8: Quy trình Sơ cứu & Y tế Sau Giao tranh", desc: "Thao tác sơ cứu tại hiện trường và yêu cầu gọi EMS." },
-            ch9: { title: "Chương 9: Quy trình Báo cáo & Hồ sơ CAD/MDC", desc: "Quy định làm báo cáo Use of Force Report và lưu trích xuất BWC." },
-            ch10: { title: "Chương 10: Quy định Xử phạt Lạm dụng Vũ lực", desc: "Các mức độ xử phạt IC áp dụng cho sĩ quan vi phạm." }
-        };
-
-        function switchMainChapter(chapterId) {
-            document.querySelectorAll('.main-chapter-panel').forEach(p => p.classList.remove('active'));
-            document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
-
-            const activePanel = document.getElementById(chapterId);
-            if (activePanel) activePanel.classList.add('active');
-
-            if (event && event.currentTarget) {
-                event.currentTarget.classList.add('active');
-            }
-
-            const num = chapterId.replace('ch', '');
-            document.getElementById('bc-title').innerText = `Chương ${num}`;
-            document.getElementById('hero-tag').innerText = `CHƯƠNG ${num.padStart(2, '0')}`;
-            
-            if (chapterInfo[chapterId]) {
-                document.getElementById('hero-title').innerText = chapterInfo[chapterId].title;
-                document.getElementById('hero-desc').innerText = chapterInfo[chapterId].desc;
-            }
-        }
-
         function openSubTab(evt, tabId) {
-            const currentChapter = evt.currentTarget.closest('.main-chapter-panel');
-            currentChapter.querySelectorAll('.sub-tab-panel').forEach(p => p.classList.remove('active'));
-            currentChapter.querySelectorAll('.sub-tab-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.sub-tab-panel').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.sub-tab-btn').forEach(b => b.classList.remove('active'));
 
             document.getElementById(tabId).classList.add('active');
             evt.currentTarget.classList.add('active');
