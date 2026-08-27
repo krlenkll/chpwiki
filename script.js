@@ -1,25 +1,34 @@
-function searchWiki() {
+function toggleSidebar() {
+    const sidebar = document.querySelector(".sidebar");
 
-    const search =
-        document.getElementById("search").value.toLowerCase();
+    sidebar.classList.toggle("open");
+}
 
-    const links =
-        document.querySelectorAll(".sidebar a");
 
-    links.forEach(function(link) {
+const search = document.getElementById("search");
 
-        const text =
-            link.textContent.toLowerCase();
+if (search) {
 
-        if (text.includes(search)) {
+    search.addEventListener("input", function () {
 
-            link.style.display = "block";
+        const query =
+            this.value.toLowerCase().trim();
 
-        } else {
+        const cards =
+            document.querySelectorAll(".document-card");
 
-            link.style.display = "none";
+        cards.forEach(function (card) {
 
-        }
+            const text =
+                card.textContent.toLowerCase();
+
+            if (text.includes(query)) {
+                card.style.display = "";
+            } else {
+                card.style.display = "none";
+            }
+
+        });
 
     });
 

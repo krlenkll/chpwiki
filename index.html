@@ -1,173 +1,685 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>CHP SOP Wiki</title>
 
+    <meta
+        name="description"
+        content="California Highway Patrol Standard Operating Procedure Wiki"
+    >
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header class="topbar">
+<div class="app">
 
-    <div class="brand">
-        <div class="brand-title">CHP</div>
-
-        <div class="brand-subtitle">
-            STANDARD OPERATING PROCEDURES
-        </div>
-    </div>
-
-    <input
-        type="text"
-        id="search"
-        placeholder="Search SOP..."
-        onkeyup="searchWiki()"
-    >
-
-</header>
-
-
-<div class="layout">
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
 
     <aside class="sidebar">
 
-        <h3>WIKI</h3>
+        <div class="sidebar-brand">
 
-        <a href="index.html">Home</a>
+            <div class="brand-mark">
+                CHP
+            </div>
 
-        <h3>DEPARTMENT</h3>
+            <div class="brand-info">
 
-        <a href="pages/department.html">
-            Department Information
-        </a>
+                <div class="brand-name">
+                    California Highway Patrol
+                </div>
 
-        <h3>OPERATIONS</h3>
+                <div class="brand-label">
+                    SOP WIKI
+                </div>
 
-        <a href="pages/patrol.html">
-            Patrol Operations
-        </a>
+            </div>
 
-        <a href="pages/traffic.html">
-            Traffic Enforcement
-        </a>
+        </div>
 
-        <h3>USE OF FORCE</h3>
 
-        <a href="pages/use-of-force.html">
-            Use of Force
-        </a>
+        <nav class="navigation">
 
-        <h3>TRAINING</h3>
+            <div class="nav-section">
 
-        <a href="pages/training.html">
-            Training
-        </a>
+                <div class="nav-label">
+                    DOCUMENTATION
+                </div>
+
+                <a href="index.html" class="nav-link active">
+                    Overview
+                </a>
+
+                <a href="pages/department.html" class="nav-link">
+                    Department
+                </a>
+
+            </div>
+
+
+            <div class="nav-section">
+
+                <div class="nav-label">
+                    OPERATIONS
+                </div>
+
+                <a href="pages/patrol.html" class="nav-link">
+                    Patrol Operations
+                </a>
+
+                <a href="pages/traffic.html" class="nav-link">
+                    Traffic Enforcement
+                </a>
+
+                <a href="pages/pursuits.html" class="nav-link">
+                    Vehicle Pursuits
+                </a>
+
+            </div>
+
+
+            <div class="nav-section">
+
+                <div class="nav-label">
+                    USE OF FORCE
+                </div>
+
+                <a href="pages/use-of-force.html" class="nav-link">
+                    General Policy
+                </a>
+
+                <a href="pages/less-lethal.html" class="nav-link">
+                    Less-Lethal Operations
+                </a>
+
+            </div>
+
+
+            <div class="nav-section">
+
+                <div class="nav-label">
+                    TRAINING
+                </div>
+
+                <a href="pages/training.html" class="nav-link">
+                    Training
+                </a>
+
+            </div>
+
+        </nav>
+
+
+        <div class="sidebar-footer">
+
+            <div class="version">
+                VERSION 1.0
+            </div>
+
+            <div>
+                CHP SOP Wiki
+            </div>
+
+        </div>
 
     </aside>
 
 
-    <main class="content">
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
 
-        <div class="breadcrumb">
-            Home
-        </div>
+    <main class="main">
 
-        <h1>
-            California Highway Patrol
-        </h1>
+        <!-- TOPBAR -->
 
-        <h2>
-            Standard Operating Procedures
-        </h2>
+        <header class="topbar">
 
-        <p class="intro">
-            Official reference for departmental policies,
-            procedures and operational guidelines.
-        </p>
+            <button
+                class="mobile-menu"
+                onclick="toggleSidebar()"
+            >
+                ☰
+            </button>
 
 
-        <hr>
+            <div class="breadcrumbs">
 
+                <strong>
+                    CHP SOP
+                </strong>
 
-        <h2>Department</h2>
+                <span>/</span>
 
-        <div class="cards">
-
-            <a href="pages/department.html" class="card">
-                <strong>Department Information</strong>
                 <span>
-                    Organization, ranks and command structure.
+                    Overview
                 </span>
-            </a>
 
-        </div>
+            </div>
 
 
-        <h2>Operations</h2>
+            <div class="search-wrapper">
 
-        <div class="cards">
+                <span class="search-icon">
+                    /
+                </span>
 
-            <a href="pages/patrol.html" class="card">
-                <strong>Patrol Operations</strong>
+                <input
+                    id="search"
+                    type="search"
+                    placeholder="Search documentation..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section class="hero">
+
+            <div class="hero-eyebrow">
+                CALIFORNIA HIGHWAY PATROL
+            </div>
+
+
+            <h1>
+                Standard Operating<br>
+                Procedure Wiki
+            </h1>
+
+
+            <p>
+                Centralized documentation for departmental
+                policies, operational procedures, training
+                standards and field operations.
+            </p>
+
+
+            <div class="hero-actions">
+
+                <a
+                    href="pages/less-lethal.html"
+                    class="button button-primary"
+                >
+                    View Less-Lethal SOP
+                </a>
+
+                <a
+                    href="#documentation"
+                    class="button button-secondary"
+                >
+                    Browse Documentation
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             DOCUMENT STATUS
+        ========================== -->
+
+        <section class="status-panel">
+
+            <div class="status-indicator">
+
+                <span class="status-dot"></span>
+
+                <div>
+
+                    <strong>
+                        Documentation System Active
+                    </strong>
+
+                    <span>
+                        Current SOP revision: 1.0
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="status-date">
+
                 <span>
-                    Patrol procedures and field operations.
+                    LAST UPDATED
                 </span>
-            </a>
 
-            <a href="pages/traffic.html" class="card">
-                <strong>Traffic Enforcement</strong>
+                <strong>
+                    August 27, 2026
+                </strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             DOCUMENTATION
+        ========================== -->
+
+        <section
+            class="content-section"
+            id="documentation"
+        >
+
+            <div class="section-header">
+
+                <div>
+
+                    <div class="section-eyebrow">
+                        DOCUMENTATION
+                    </div>
+
+                    <h2>
+                        Department Resources
+                    </h2>
+
+                </div>
+
+
+                <span class="document-count">
+                    06 DOCUMENTS
+                </span>
+
+            </div>
+
+
+            <div class="document-grid">
+
+
+                <!-- DEPARTMENT -->
+
+                <a
+                    href="pages/department.html"
+                    class="document-card"
+                >
+
+                    <div class="document-number">
+                        01
+                    </div>
+
+                    <div class="document-card-content">
+
+                        <h3>
+                            Department
+                        </h3>
+
+                        <p>
+                            Department structure, divisions,
+                            ranks and organizational standards.
+                        </p>
+
+                        <span class="document-link">
+                            OPEN DOCUMENT →
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+                <!-- PATROL -->
+
+                <a
+                    href="pages/patrol.html"
+                    class="document-card"
+                >
+
+                    <div class="document-number">
+                        02
+                    </div>
+
+                    <div class="document-card-content">
+
+                        <h3>
+                            Patrol Operations
+                        </h3>
+
+                        <p>
+                            Patrol procedures, field operations
+                            and daily operational standards.
+                        </p>
+
+                        <span class="document-link">
+                            OPEN DOCUMENT →
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+                <!-- TRAFFIC -->
+
+                <a
+                    href="pages/traffic.html"
+                    class="document-card"
+                >
+
+                    <div class="document-number">
+                        03
+                    </div>
+
+                    <div class="document-card-content">
+
+                        <h3>
+                            Traffic Enforcement
+                        </h3>
+
+                        <p>
+                            Traffic enforcement procedures,
+                            vehicle stops and roadway operations.
+                        </p>
+
+                        <span class="document-link">
+                            OPEN DOCUMENT →
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+                <!-- PURSUITS -->
+
+                <a
+                    href="pages/pursuits.html"
+                    class="document-card"
+                >
+
+                    <div class="document-number">
+                        04
+                    </div>
+
+                    <div class="document-card-content">
+
+                        <h3>
+                            Vehicle Pursuits
+                        </h3>
+
+                        <p>
+                            Pursuit initiation, continuation,
+                            termination and supervisory review.
+                        </p>
+
+                        <span class="document-link">
+                            OPEN DOCUMENT →
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+                <!-- USE OF FORCE -->
+
+                <a
+                    href="pages/use-of-force.html"
+                    class="document-card"
+                >
+
+                    <div class="document-number">
+                        05
+                    </div>
+
+                    <div class="document-card-content">
+
+                        <h3>
+                            Use of Force
+                        </h3>
+
+                        <p>
+                            General force policy, proportionality,
+                            de-escalation and reporting standards.
+                        </p>
+
+                        <span class="document-link">
+                            OPEN DOCUMENT →
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+                <!-- LESS LETHAL -->
+
+                <a
+                    href="pages/less-lethal.html"
+                    class="document-card featured"
+                >
+
+                    <div class="document-number">
+                        06
+                    </div>
+
+                    <div class="document-card-content">
+
+                        <div class="card-badge">
+                            CURRENT SOP
+                        </div>
+
+                        <h3>
+                            Less-Lethal Operations
+                        </h3>
+
+                        <p>
+                            Standard Operating Procedure governing
+                            Less-Lethal equipment and operations.
+                        </p>
+
+                        <span class="document-link">
+                            OPEN SOP →
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             QUICK ACCESS
+        ========================== -->
+
+        <section class="content-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <div class="section-eyebrow">
+                        QUICK ACCESS
+                    </div>
+
+                    <h2>
+                        Frequently Referenced
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="quick-access">
+
+
+                <a
+                    href="pages/less-lethal.html#chapter-1"
+                    class="quick-item"
+                >
+
+                    <span class="quick-index">
+                        01
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            General Policy
+                        </strong>
+
+                        <span>
+                            Less-Lethal Operations
+                        </span>
+
+                    </div>
+
+                    <b>
+                        →
+                    </b>
+
+                </a>
+
+
+                <a
+                    href="pages/less-lethal.html#chapter-3"
+                    class="quick-item"
+                >
+
+                    <span class="quick-index">
+                        02
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Use of Force Continuum
+                        </strong>
+
+                        <span>
+                            Less-Lethal Operations
+                        </span>
+
+                    </div>
+
+                    <b>
+                        →
+                    </b>
+
+                </a>
+
+
+                <a
+                    href="pages/less-lethal.html#chapter-6"
+                    class="quick-item"
+                >
+
+                    <span class="quick-index">
+                        03
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Electronic Control Device
+                        </strong>
+
+                        <span>
+                            Less-Lethal Operations
+                        </span>
+
+                    </div>
+
+                    <b>
+                        →
+                    </b>
+
+                </a>
+
+
+                <a
+                    href="pages/less-lethal.html#chapter-19"
+                    class="quick-item"
+                >
+
+                    <span class="quick-index">
+                        04
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Quick Reference
+                        </strong>
+
+                        <span>
+                            Less-Lethal Operations
+                        </span>
+
+                    </div>
+
+                    <b>
+                        →
+                    </b>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FOOTER
+        ========================== -->
+
+        <footer class="footer">
+
+            <div>
+
+                <strong>
+                    CALIFORNIA HIGHWAY PATROL
+                </strong>
+
                 <span>
-                    Traffic enforcement procedures.
+                    SOP WIKI
                 </span>
-            </a>
 
-        </div>
+            </div>
 
 
-        <h2>Use of Force</h2>
+            <div class="footer-right">
 
-        <div class="cards">
-
-            <a href="pages/use-of-force.html" class="card">
-                <strong>Use of Force</strong>
                 <span>
-                    Policies regarding force options.
+                    Documentation Version 1.0
                 </span>
-            </a>
 
-        </div>
-
-
-        <h2>Training</h2>
-
-        <div class="cards">
-
-            <a href="pages/training.html" class="card">
-                <strong>Training</strong>
                 <span>
-                    Academy and field training references.
+                    © 2026
                 </span>
-            </a>
 
-        </div>
+            </div>
+
+        </footer>
 
     </main>
 
 </div>
 
 
-<footer>
-
-    CHP SOP Wiki · Version 1.0
-
-</footer>
-
-
 <script src="script.js"></script>
 
 </body>
+
 </html>
