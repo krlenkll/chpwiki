@@ -1,38 +1,323 @@
-/* Styling cho thanh chứa Sub-Tabs */
-.sub-tab-navigation {
+:root {
+    --chp-navy: #0a192f;
+    --chp-navy-light: #172a45;
+    --chp-gold: #d4af37;
+    --chp-gold-hover: #f3cf55;
+    --bg-gray: #f8fafc;
+    --card-bg: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --danger-color: #ef4444;
+    --success-color: #10b981;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-gray);
+    color: var(--text-main);
+    line-height: 1.6;
     display: flex;
+    min-height: 100vh;
+}
+
+/* CONTROL BAR FOR ADMIN */
+.admin-bar {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--chp-navy);
+    border: 2px solid var(--chp-gold);
+    padding: 10px 16px;
+    border-radius: 30px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    z-index: 9999;
+}
+
+.admin-btn {
+    background: var(--chp-gold);
+    color: var(--chp-navy);
+    border: none;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.admin-btn:hover {
+    background: var(--chp-gold-hover);
+    transform: translateY(-2px);
+}
+
+.admin-btn.danger {
+    background: var(--danger-color);
+    color: white;
+}
+
+/* EDITING HIGHLIGHT */
+[contenteditable="true"] {
+    outline: 2px dashed var(--chp-gold) !important;
+    background-color: rgba(212, 175, 55, 0.05);
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+/* LAYOUT */
+.app-container {
+    display: flex;
+    width: 100%;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 280px;
+    background-color: var(--chp-navy);
+    color: white;
+    padding: 24px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    border-right: 3px solid var(--chp-gold);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
     gap: 12px;
-    border-bottom: 2px solid #e2e8f0;
-    margin: 24px 0;
-    padding-bottom: 0;
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.brand-badge {
+    background: var(--chp-gold);
+    color: var(--chp-navy);
+    font-weight: 900;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.brand-text h2 {
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+}
+
+.brand-text p {
+    font-size: 0.75rem;
+    color: var(--chp-gold);
+    font-weight: 600;
+}
+
+.nav-group {
+    margin-bottom: 24px;
+}
+
+.nav-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--chp-gold);
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.nav-item {
+    display: block;
+    padding: 10px 14px;
+    color: #94a3b8;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.nav-item:hover, .nav-item.active {
+    background-color: var(--chp-navy-light);
+    color: white;
+}
+
+.nav-item.active {
+    border-left: 3px solid var(--chp-gold);
+}
+
+/* MAIN CONTENT */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.topbar {
+    background: white;
+    padding: 16px 32px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.breadcrumbs {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.breadcrumbs strong {
+    color: var(--chp-navy);
+}
+
+.hero {
+    background: linear-gradient(135deg, var(--chp-navy) 0%, var(--chp-navy-light) 100%);
+    color: white;
+    padding: 40px 32px;
+    border-bottom: 4px solid var(--chp-gold);
+}
+
+.hero-tag {
+    background: rgba(212, 175, 55, 0.2);
+    color: var(--chp-gold);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+}
+
+.hero p {
+    color: #94a3b8;
+    max-width: 700px;
+    font-size: 0.95rem;
+}
+
+/* SUB TABS COMPONENT */
+.content-area {
+    padding: 32px;
+}
+
+.sub-tab-container {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+    overflow: hidden;
+}
+
+.sub-tab-header {
+    display: flex;
+    background: #f1f5f9;
+    border-bottom: 1px solid var(--border-color);
     overflow-x: auto;
 }
 
 .sub-tab-btn {
-    background: transparent;
+    padding: 14px 20px;
     border: none;
-    padding: 12px 16px;
+    background: transparent;
     font-weight: 600;
-    color: #64748b;
+    font-size: 0.88rem;
+    color: var(--text-muted);
     cursor: pointer;
     border-bottom: 3px solid transparent;
-    transition: all 0.2s ease;
+    transition: all 0.2s;
     white-space: nowrap;
 }
 
 .sub-tab-btn:hover {
-    color: #0f172a;
+    color: var(--chp-navy);
+    background: #e2e8f0;
 }
 
 .sub-tab-btn.active {
-    color: #1e3a8a;
-    border-bottom-color: #1e3a8a;
+    color: var(--chp-navy);
+    border-bottom-color: var(--chp-gold);
+    background: white;
 }
 
-/* Panel chứa nội dung Sub-Tab */
-.content-panel {
-    background: #ffffff;
-    padding: 24px;
-    border-radius: 8px;
-    border: 1px solid #e2e8f0;
+.sub-tab-body {
+    padding: 32px;
+}
+
+.sub-tab-panel {
+    display: none;
+}
+
+.sub-tab-panel.active {
+    display: block;
+}
+
+.sub-tab-panel h2 {
+    color: var(--chp-navy);
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--bg-gray);
+}
+
+.sub-tab-panel h3 {
+    color: var(--chp-navy-light);
+    font-size: 1.1rem;
+    margin: 20px 0 10px 0;
+}
+
+.sub-tab-panel ul, .sub-tab-panel ol {
+    padding-left: 20px;
+    margin-bottom: 16px;
+}
+
+.sub-tab-panel li {
+    margin-bottom: 8px;
+}
+
+.info-box {
+    background: #eff6ff;
+    border-left: 4px solid #3b82f6;
+    padding: 16px;
+    border-radius: 0 6px 6px 0;
+    margin: 20px 0;
+    font-size: 0.9rem;
+}
+
+.warning-box {
+    background: #fef2f2;
+    border-left: 4px solid var(--danger-color);
+    padding: 16px;
+    border-radius: 0 6px 6px 0;
+    margin: 20px 0;
+    font-size: 0.9rem;
+}
+
+/* FOOTER */
+.footer {
+    margin-top: auto;
+    padding: 24px 32px;
+    background: white;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--text-muted);
 }

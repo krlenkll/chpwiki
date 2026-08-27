@@ -1,186 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
+// Chuyển Sub-Tab
+function openSubTab(evt, tabId) {
+    document.querySelectorAll('.sub-tab-panel').forEach(panel => panel.classList.remove('active'));
+    document.querySelectorAll('.sub-tab-btn').forEach(btn => btn.classList.remove('active'));
+    
+    document.getElementById(tabId).classList.add('active');
+    if (evt) evt.currentTarget.classList.add('active');
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CHP SOP Wiki - Less-Lethal Operations</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+// Bật/Tắt chế độ chỉnh sửa trực tiếp trên Web
+let isEditMode = false;
 
-<body>
+function toggleEditMode() {
+    isEditMode = !isEditMode;
+    const editables = document.querySelectorAll('.editable, h1, h2, h3, p, li, span.hero-tag');
+    
+    editables.forEach(el => {
+        el.contentEditable = isEditMode ? "true" : "false";
+    });
 
-<div class="app">
+    const status = document.getElementById('edit-status');
+    status.innerText = isEditMode ? "Chế độ: CHỈNH SỬA (Click vào chữ để sửa)" : "Chế độ: Đọc";
+    status.style.color = isEditMode ? "#10b981" : "white";
+}
 
-    <!-- =========================
-         SIDEBAR (MAIN TABS)
-    ========================== -->
-    <aside class="sidebar">
+// Lưu tạm vào trình duyệt (LocalStorage)
+function saveToLocal() {
+    const content = document.body.innerHTML;
+    localStorage.setItem('chp_wiki_content', content);
+    alert('✅ Đã lưu tạm vào trình duyệt! (Nhớ nhấn "Xuất File HTML" và up lên GitHub để mọi người cùng thấy).');
+}
 
-        <div class="sidebar-brand">
-            <div class="brand-mark">CHP</div>
-            <div class="brand-info">
-                <div class="brand-name">California Highway Patrol</div>
-                <div class="brand-label">SOP WIKI</div>
-            </div>
-        </div>
-
-        <nav class="navigation">
-            <div class="nav-section">
-                <div class="nav-label">MAIN NAVIGATION</div>
-                
-                <!-- Main Tab Buttons -->
-                <button class="nav-link main-tab-btn" onclick="switchMainTab('overview-tab', this)">
-                    Overview
-                </button>
-                <button class="nav-link main-tab-btn active" onclick="switchMainTab('less-lethal-tab', this)">
-                    Less-Lethal Operations
-                </button>
-            </div>
-        </nav>
-
-        <div class="sidebar-footer">
-            <div class="version">VERSION 1.0</div>
-            <div>CHP SOP Wiki</div>
-        </div>
-
-    </aside>
-
-    <!-- =========================
-         MAIN CONTENT AREA
-    ========================== -->
-    <main class="main">
-
-        <header class="topbar">
-            <button class="mobile-menu" onclick="toggleSidebar()">☰</button>
-            <div class="breadcrumbs">
-                <strong>CHP SOP</strong>
-                <span>/</span>
-                <span id="breadcrumb-current">Less-Lethal Operations</span>
-            </div>
-        </header>
-
-        <!-- =========================================================
-             TAB 1: OVERVIEW (MAIN TAB)
-        ========================================================== -->
-        <div id="overview-tab" class="main-tab-content" style="display: none;">
-            <section class="hero">
-                <div class="hero-eyebrow">CALIFORNIA HIGHWAY PATROL</div>
-                <h1>Standard Operating<br>Procedure Wiki</h1>
-                <p>Centralized documentation for departmental policies and field operations.</p>
-            </section>
-        </div>
-
-        <!-- =========================================================
-             TAB 2: LESS-LETHAL OPERATIONS (MAIN TAB WITH SUB-TABS)
-        ========================================================== -->
-        <div id="less-lethal-tab" class="main-tab-content">
-
-            <section class="hero">
-                <div class="hero-eyebrow">USE OF FORCE POLICY</div>
-                <h1>Less-Lethal Operations</h1>
-                <p>Standard Operating Procedures governing less-lethal equipment, deployment criteria, and tactical operations.</p>
-            </section>
-
-            <!-- SUB-TABS NAVIGATION -->
-            <div class="sub-tab-navigation">
-                <button class="sub-tab-btn active" onclick="switchSubTab('sub-general', this)">
-                    01. General Policy
-                </button>
-                <button class="sub-tab-btn" onclick="switchSubTab('sub-continuum', this)">
-                    02. Force Continuum
-                </button>
-                <button class="sub-tab-btn" onclick="switchSubTab('sub-ecd', this)">
-                    03. Electronic Control Device
-                </button>
-                <button class="sub-tab-btn" onclick="switchSubTab('sub-quickref', this)">
-                    04. Quick Reference
-                </button>
-            </div>
-
-            <!-- SUB-TAB CONTENT 1 -->
-            <div id="sub-general" class="sub-tab-content active">
-                <div class="content-panel">
-                    <h2>01. General Policy</h2>
-                    <p>Standard protocols regarding authorization, proportionality, and de-escalation prior to employing less-lethal force options.</p>
-                </div>
-            </div>
-
-            <!-- SUB-TAB CONTENT 2 -->
-            <div id="sub-continuum" class="sub-tab-content" style="display: none;">
-                <div class="content-panel">
-                    <h2>02. Use of Force Continuum</h2>
-                    <p>Detailed matrix defining subject resistance levels and the corresponding authorized response thresholds.</p>
-                </div>
-            </div>
-
-            <!-- SUB-TAB CONTENT 3 -->
-            <div id="sub-ecd" class="sub-tab-content" style="display: none;">
-                <div class="content-panel">
-                    <h2>03. Electronic Control Device (ECD)</h2>
-                    <p>Deployment guidelines, target zones, probe placement rules, and mandatory post-deployment medical procedures.</p>
-                </div>
-            </div>
-
-            <!-- SUB-TAB CONTENT 4 -->
-            <div id="sub-quickref" class="sub-tab-content" style="display: none;">
-                <div class="content-panel">
-                    <h2>04. Quick Reference</h2>
-                    <p>Summary checklists, reporting requirements, and supervisor notification protocols for field supervisors.</p>
-                </div>
-            </div>
-
-        </div>
-
-        <footer class="footer">
-            <div>
-                <strong>CALIFORNIA HIGHWAY PATROL</strong>
-                <span>SOP WIKI</span>
-            </div>
-            <div class="footer-right">
-                <span>Documentation Version 1.0</span>
-                <span>© 2026</span>
-            </div>
-        </footer>
-
-    </main>
-
-</div>
-
-<!-- JavaScript cho chuyển đổi Tab -->
-<script>
-    // Chuyển đổi Tab Chính (Main Tabs)
-    function switchMainTab(tabId, element) {
-        document.querySelectorAll('.main-tab-content').forEach(tab => {
-            tab.style.display = 'none';
-        });
-        document.querySelectorAll('.main-tab-btn').forEach(btn => {
-            btn.classList.remove('active');
-        });
-
-        document.getElementById(tabId).style.display = 'block';
-        element.classList.add('active');
-
-        // Cập nhật Breadcrumb
-        document.getElementById('breadcrumb-current').innerText = element.innerText.trim();
+// Khôi phục mặc định
+function resetDefault() {
+    if (confirm('Bạn có chắc muốn xóa bản sửa tạm và khôi phục về mặc định?')) {
+        localStorage.removeItem('chp_wiki_content');
+        location.reload();
     }
+}
 
-    // Chuyển đổi Tab Con (Sub Tabs)
-    function switchSubTab(subTabId, element) {
-        document.querySelectorAll('.sub-tab-content').forEach(content => {
-            content.style.display = 'none';
-            content.classList.remove('active');
-        });
-        document.querySelectorAll('.sub-tab-btn').forEach(btn => {
-            btn.classList.remove('active');
-        });
+// Xuất file HTML sạch để cập nhật lên GitHub
+function exportHTML() {
+    if (isEditMode) toggleEditMode();
 
-        const activeSubContent = document.getElementById(subTabId);
-        activeSubContent.style.display = 'block';
-        activeSubContent.classList.add('active');
-        element.classList.add('active');
-    }
-</script>
+    const cloneDoc = document.documentElement.cloneNode(true);
+    
+    // Làm sạch thuộc tính contenteditable trước khi lưu
+    cloneDoc.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
 
-</body>
-</html>
+    const htmlContent = "<!DOCTYPE html>\n" + cloneDoc.outerHTML;
+    
+    const blob = new Blob([htmlContent], { type: 'text/html' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'index.html';
+    a.click();
+}
